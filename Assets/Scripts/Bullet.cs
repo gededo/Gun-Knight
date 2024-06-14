@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     //public GameObject Player;
     public float moveToX;
+    public float playerBulletDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,7 @@ public class Bullet : MonoBehaviour
         if(collision.gameObject.tag == "Enemy")
         {
             Enemy enemyScript = collision.GetComponent<Enemy>();
-            enemyScript.Health -= 5f;
+            enemyScript.Health -= playerBulletDamage;
         }
         Destroy(gameObject);
     }

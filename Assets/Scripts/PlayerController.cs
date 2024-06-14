@@ -3,18 +3,23 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CharacterController2D : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    // Move player in 2D space
     public float speed = 5f;
-    public float jumpHeight = 50f;
-    public float Health;
+    public float jumpHeight = 12f;
+    public float maxHealth;
+    public float currentHealth;
+    public float damageFromEnemyCollision = 10f;
+    public float damageFromProjectile = 20f;
+    public float invulnerabilityDuration = 1.5f;
+    private bool isInvulnerable = false;
+    private float invulnerabilityTimer = 0f;
     public bool isDead = false;
     public Camera mainCamera;
     public LayerMask groundLayer;
     public GameObject bulletPrefab;
-    public GameObject Gun;
-    public GameObject GunTip;
+    public GameObject Gun, Gun2, Gun3, activeGun;
+    public Transform GunTip;
 
     bool isGrounded;
     bool facingRight = true;
@@ -24,6 +29,8 @@ public class CharacterController2D : MonoBehaviour
     BoxCollider2D mainCollider;
     Animator anim;
     Transform t;
+
+    bool isColliding;
 
     void GroundCheck()
     {
@@ -44,29 +51,44 @@ public class CharacterController2D : MonoBehaviour
         }
     }
 
-    // Use this for initialization
+    void SwitchGuns(GameObject selectedGun)
+    {
+        activeGun.SetActive(false);
+        activeGun = selectedGun;
+        activeGun.SetActive(true);
+        GunTip = activeGun.gameObject.transform.GetChild(0);
+    }
+
     void Start()
     {
         t = transform;
         rb = GetComponent<Rigidbody2D>();
         mainCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
+        GunTip = activeGun.gameObject.transform.GetChild(0);
         facingRight = t.localScale.x > 0;
+        activeGun = Gun;
 
         if (mainCamera)
         {
             cameraPos = mainCamera.transform.position;
         }
+
+        currentHealth = maxHealth;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Health <= 0)
+        if (currentHealth <= 0)
         {
             isDead = true;
-            Gun.SetActive(false);
+            activeGun.SetActive(false);
             anim.SetBool("isDead", true);
+        }
+
+        if (Input.GetKey(KeyCode.G))
+        {
+            SwitchGuns(Gun2);
         }
 
         // Movement controls
@@ -85,10 +107,12 @@ public class CharacterController2D : MonoBehaviour
         //Shooting controls
         if(Input.GetMouseButtonDown(0) && !isDead)
         {
-            Animator GunAnim = Gun.GetComponent<Animator>();
+            Animator GunAnim = activeGun.GetComponent<Animator>();
             GunAnim.SetTrigger("IsShooting");
-            GameObject bullet = (GameObject)Instantiate(bulletPrefab, GunTip.transform.position, transform.rotation);
+            GameObject bullet = (GameObject)Instantiate(bulletPrefab, GunTip.position, transform.rotation);
             Bullet bulletScript = bullet.GetComponent<Bullet>();
+            Guns gunScript = activeGun.GetComponent<Guns>();
+            bulletScript.playerBulletDamage = gunScript.GunDamage;
             if (facingRight)
             {
                 bulletScript.moveToX = 1;
@@ -118,7 +142,7 @@ public class CharacterController2D : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && isGrounded && !isDead)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
-            //anim.SetBool("isJumping", true);
+            anim.SetBool("isJumping", true);
         }
 
         // Camera follow
@@ -126,6 +150,17 @@ public class CharacterController2D : MonoBehaviour
         {
             mainCamera.transform.position = new Vector3(t.position.x, cameraPos.y, cameraPos.z);
         }
+
+        if (isInvulnerable)
+        {
+            invulnerabilityTimer += Time.deltaTime;
+            if(invulnerabilityTimer >= invulnerabilityDuration)
+            {
+                isInvulnerable = false;
+                invulnerabilityTimer = 0;
+            }
+        }
+
     }
 
     void FixedUpdate()
@@ -145,5 +180,18 @@ public class CharacterController2D : MonoBehaviour
         }
         GroundCheck();
         anim.SetFloat("yVelocity", rb.velocity.y);
+    }
+    
+    IEnumerator InvulnerabilityCoroutine()
+    {
+        isInvulnerable = true;
+        yield return new WaitForSeconds(invulnerabilityDuration);
+        isInvulnerable = false;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+        Debug.Log("Player took damage: " + damage + ". Current health: " + currentHealth);
     }
 }
