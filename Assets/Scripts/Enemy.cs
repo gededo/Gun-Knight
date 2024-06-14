@@ -10,13 +10,15 @@ public class Enemy : MonoBehaviour
     public float detectionRange = 5f;
     public float fovAngle = 45f;
     public LayerMask playerLayer;
+    public LayerMask groundLayer;
     public float chaseDuration = 2f;
     public float damageAmount = 1f;
     public float damageInterval = 1f;
     public float capsuleHeight = 2f; // Capsule height
-    public float capsuleRadius = 0.5f; // Capsule radius
     public float moveDirection = 1f;
     public float stoppingDistance = 0.5f;
+    public CapsuleCollider2D capsuleCollider;
+    public bool resetDamageCountdown = true;
 
     Animator anim;
     Rigidbody2D rb;
@@ -25,14 +27,15 @@ public class Enemy : MonoBehaviour
     private bool movingRight = true;
     private bool isChasing = false;
     private Coroutine stopChaseCoroutine;
+    private Coroutine stopDamage;
     private bool isPlayerInsideCapsule = false;
 
     void Start()
     {
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         t = transform;
-        StartCoroutine(DamagePlayer());
     }
 
     void Update()
@@ -68,7 +71,7 @@ public class Enemy : MonoBehaviour
     {
         rb.velocity = new Vector2((moveDirection) * speed, rb.velocity.y);
 
-        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 1f);
+        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 1f, groundLayer);
         if (groundInfo.collider == false)
         {
             if (movingRight)
@@ -187,26 +190,31 @@ public class Enemy : MonoBehaviour
 
     void CheckCapsuleCast()
     {
-        Vector2 point1 = new Vector2(transform.position.x, transform.position.y + capsuleHeight);
-        Vector2 point2 = new Vector2(transform.position.x, transform.position.y + 0.55f);
-        float radius = capsuleRadius;
+        Vector2 capsulePos = new Vector2(transform.position.x + capsuleCollider.offset.x, transform.position.y + capsuleCollider.offset.y);
+        Vector2 capsuleSize = new Vector2(capsuleCollider.size.x, capsuleCollider.size.y);
 
-        RaycastHit2D hit = Physics2D.CapsuleCast(point1, point2, CapsuleDirection2D.Vertical, 0f, Vector2.right, 0f, playerLayer);
-        if (hit.collider != null && hit.collider.CompareTag("Player"))
+        Collider2D hit = Physics2D.OverlapCapsule(capsulePos, capsuleSize, CapsuleDirection2D.Vertical, 0f, playerLayer);
+        if(hit != null && hit.gameObject.tag == "Player")
         {
             isPlayerInsideCapsule = true;
+            if (resetDamageCountdown)
+            {
+                StartCoroutine(DamagePlayer());
+            }
+            resetDamageCountdown = false;
         }
         else
         {
-            isPlayerInsideCapsule = false;
+            resetDamageCountdown=true;
+            isPlayerInsideCapsule=false;
         }
     }
 
     IEnumerator DamagePlayer()
     {
-        while (true)
+        while(isPlayerInsideCapsule == true)
         {
-            if (isPlayerInsideCapsule && player != null)
+            if (player != null)
             {
                 player.GetComponent<PlayerController>().TakeDamage(damageAmount);
             }
@@ -226,7 +234,7 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawRay(transform.position, fovLine1);
         Gizmos.DrawRay(transform.position, fovLine2);
 
-        Gizmos.color = Color.green;
+        /*Gizmos.color = Color.green;
         Vector2 point1 = new Vector2(transform.position.x, transform.position.y + capsuleHeight);
         Vector2 point2 = new Vector2(transform.position.x, transform.position.y + 0.55f);
         float radius = capsuleRadius;
@@ -235,6 +243,6 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(point2, radius);
 
         Gizmos.DrawLine(point1 + Vector2.left * radius, point2 + Vector2.left * radius);
-        Gizmos.DrawLine(point1 + Vector2.right * radius, point2 + Vector2.right * radius);
+        Gizmos.DrawLine(point1 + Vector2.right * radius, point2 + Vector2.right * radius);*/
     }
 }

@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     public float damageFromProjectile = 20f;
     public float invulnerabilityDuration = 1.5f;
     private bool isInvulnerable = false;
-    private float invulnerabilityTimer = 0f;
     public bool isDead = false;
     public Camera mainCamera;
     public LayerMask groundLayer;
@@ -151,16 +150,6 @@ public class PlayerController : MonoBehaviour
             mainCamera.transform.position = new Vector3(t.position.x, cameraPos.y, cameraPos.z);
         }
 
-        if (isInvulnerable)
-        {
-            invulnerabilityTimer += Time.deltaTime;
-            if(invulnerabilityTimer >= invulnerabilityDuration)
-            {
-                isInvulnerable = false;
-                invulnerabilityTimer = 0;
-            }
-        }
-
     }
 
     void FixedUpdate()
@@ -195,7 +184,12 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        currentHealth -= damage;
-        Debug.Log("Player took damage: " + damage + ". Current health: " + currentHealth);
+        if (!isInvulnerable)
+        {
+            StartCoroutine(InvulnerabilityCoroutine());
+            currentHealth -= damage;
+            Debug.Log("Player took damage: " + damage + ". Current health: " + currentHealth);
+        }
+        
     }
 }
