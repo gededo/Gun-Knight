@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
             if (moveDirection > 0 && !facingRight)
             {
                 facingRight = true;
-                t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, transform.localScale.z);
+                t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
             }
             if (moveDirection < 0 && facingRight)
             {
@@ -165,10 +165,9 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Apply movement velocity
         if (!isDead)
         {
-            rb.velocity = new Vector2((moveDirection) * speed, rb.velocity.y);
+            Move();
         }
         if(rb.velocity.x != 0 && !isDead)
         {
@@ -182,6 +181,11 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("yVelocity", rb.velocity.y);
     }
     
+    void Move()
+    {
+        rb.velocity = new Vector2((moveDirection) * speed, rb.velocity.y);
+    }
+
     IEnumerator InvulnerabilityCoroutine()
     {
         isInvulnerable = true;
