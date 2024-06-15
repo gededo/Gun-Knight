@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public float damageFromEnemyCollision = 10f;
     public float damageFromProjectile = 20f;
     public float invulnerabilityDuration = 1.5f;
-    private bool isInvulnerable = false;
+    public bool isInvulnerable = false;
     public bool isDead = false;
     public Camera mainCamera;
     public LayerMask groundLayer;
@@ -184,9 +184,10 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (!isInvulnerable)
+        if (!isInvulnerable && !isDead)
         {
             StartCoroutine(InvulnerabilityCoroutine());
+            anim.Play("PlayerHurt");
             currentHealth -= damage;
             Debug.Log("Player took damage: " + damage + ". Current health: " + currentHealth);
         }

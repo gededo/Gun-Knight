@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 964851391}
   - component: {fileID: 964851394}
   - component: {fileID: 964851395}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: RedKnight
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -550,7 +550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29fdd1fe197263b478a25396d3cbd4c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 10
+  maxHealth: 11
+  currentHealth: 0
   speed: 2
   groundDetection: {fileID: 1163673239}
   player: {fileID: 1404265440}
@@ -569,7 +570,10 @@ MonoBehaviour:
   moveDirection: 1
   stoppingDistance: 0.5
   capsuleCollider: {fileID: 964851395}
-  resetDamageCountdown: 1
+  resetAttackCooldown: 1
+  isDead: 0
+  playerScript: {fileID: 0}
+  attackFrame: 0
 --- !u!95 &964851394
 Animator:
   serializedVersion: 5
@@ -977,6 +981,7 @@ MonoBehaviour:
   damageFromEnemyCollision: 10
   damageFromProjectile: 20
   invulnerabilityDuration: 0.5
+  isInvulnerable: 0
   isDead: 0
   mainCamera: {fileID: 519420031}
   groundLayer:

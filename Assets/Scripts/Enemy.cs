@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float Health = 11f;
+    public float maxHealth = 11f;
+    public float currentHealth;
     public float speed = 2f;
     public Transform groundDetection;
     public Transform player;
@@ -18,7 +19,10 @@ public class Enemy : MonoBehaviour
     public float moveDirection = 1f;
     public float stoppingDistance = 0.5f;
     public CapsuleCollider2D capsuleCollider;
-    public bool resetDamageCountdown = true;
+    public bool resetAttackCooldown = true;
+    public bool isDead = false;
+    public PlayerController playerScript;
+    public bool attackFrame = false;
 
     Animator anim;
     Rigidbody2D rb;
@@ -32,17 +36,21 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        currentHealth = maxHealth;
         capsuleCollider = GetComponent<CapsuleCollider2D>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        playerScript = player.GetComponent<PlayerController>();
         t = transform;
     }
 
     void Update()
     {
-        if (Health <= 0)
+        if (currentHealth <= 0)
         {
-            Die();
+            isDead = true;
+            anim.SetBool("isDead", true);
+            //Destroy(gameObject);
         }
 
         CheckCapsuleCast();
@@ -50,21 +58,18 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!isChasing)
+        if (!isDead)
         {
-            Patrol();
-            CheckForPlayer();
+            if (!isChasing)
+            {
+                Patrol();
+                CheckForPlayer();
+            }
+            else
+            {
+                FollowPlayer();
+            }
         }
-        else
-        {
-            FollowPlayer();
-        }
-    }
-
-    void Die()
-    {
-        //anim.SetTrigger("Dead); <-- no futuro pra animação de morte
-        Destroy(gameObject);
     }
 
     void Patrol()
@@ -194,31 +199,46 @@ public class Enemy : MonoBehaviour
         Vector2 capsuleSize = new Vector2(capsuleCollider.size.x, capsuleCollider.size.y);
 
         Collider2D hit = Physics2D.OverlapCapsule(capsulePos, capsuleSize, CapsuleDirection2D.Vertical, 0f, playerLayer);
-        if(hit != null && hit.gameObject.tag == "Player")
+        if(hit != null && hit.gameObject.tag == "Player" && !playerScript.isDead && !isDead)
         {
             isPlayerInsideCapsule = true;
-            if (resetDamageCountdown)
+            if(movingRight && player.transform.position.x < transform.position.x)
             {
-                StartCoroutine(DamagePlayer());
+                Flip();
             }
-            resetDamageCountdown = false;
+            else if(!movingRight && player.transform.position.x > transform.position.x)
+            {
+                Flip();
+            }
+            if (resetAttackCooldown && !anim.GetBool("gettingHurt") && !anim.GetBool("doAttack"))
+            {
+                anim.SetTrigger("doAttack");
+            }
         }
         else
         {
-            resetDamageCountdown=true;
             isPlayerInsideCapsule=false;
         }
     }
 
-    IEnumerator DamagePlayer()
+    IEnumerator AttackCooldown()
     {
-        while(isPlayerInsideCapsule == true)
+        yield return new WaitForSeconds(damageInterval);
+        anim.SetBool("resetAttackCooldown", true);
+        resetAttackCooldown = true;
+    }
+
+    public void DamagePlayer()
+    {
+        if(isPlayerInsideCapsule && resetAttackCooldown)
         {
             if (player != null)
             {
-                player.GetComponent<PlayerController>().TakeDamage(damageAmount);
+                playerScript.TakeDamage(damageAmount);
+                anim.SetBool("resetAttackCooldown", false);
+                resetAttackCooldown = false;
+                StartCoroutine(AttackCooldown());
             }
-            yield return new WaitForSeconds(damageInterval);
         }
     }
 
@@ -233,16 +253,26 @@ public class Enemy : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawRay(transform.position, fovLine1);
         Gizmos.DrawRay(transform.position, fovLine2);
-
-        /*Gizmos.color = Color.green;
-        Vector2 point1 = new Vector2(transform.position.x, transform.position.y + capsuleHeight);
-        Vector2 point2 = new Vector2(transform.position.x, transform.position.y + 0.55f);
-        float radius = capsuleRadius;
-
-        Gizmos.DrawWireSphere(point1, radius);
-        Gizmos.DrawWireSphere(point2, radius);
-
-        Gizmos.DrawLine(point1 + Vector2.left * radius, point2 + Vector2.left * radius);
-        Gizmos.DrawLine(point1 + Vector2.right * radius, point2 + Vector2.right * radius);*/
     }
+
+    public void TakeDamage(float damage)
+    {
+        if (!isDead)
+        {
+            currentHealth -= damage;
+            anim.SetBool("gettingHurt", true);
+            Debug.Log("Enemy took damage: " + damage + ". Current health: " + currentHealth);
+        }
+    }
+
+    public void StopGettingHurt()
+    {
+        anim.SetBool("gettingHurt", false);
+    }
+
+    public void quitAttackTrigger()
+    {
+        anim.ResetTrigger("doAttack");
+    }
+
 }
