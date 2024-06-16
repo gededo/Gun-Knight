@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 position = transform.position;
         Vector2 direction = Vector2.down;
-        float distance = 1f;
+        float distance = 0.5f;
 
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
         if (hit.collider != null)
@@ -85,9 +85,17 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isDead", true);
         }
 
-        if (Input.GetKey(KeyCode.G))
+        if (Input.GetKey(KeyCode.Alpha1) && !Gun.activeInHierarchy)
+        {
+            SwitchGuns(Gun);
+        }
+        if (Input.GetKey(KeyCode.Alpha2) && !Gun2.activeInHierarchy)
         {
             SwitchGuns(Gun2);
+        }
+        if (Input.GetKey(KeyCode.Alpha3) && !Gun3.activeInHierarchy)
+        {
+            SwitchGuns(Gun3);
         }
 
         // Movement controls
@@ -108,17 +116,25 @@ public class PlayerController : MonoBehaviour
         {
             Animator GunAnim = activeGun.GetComponent<Animator>();
             GunAnim.SetTrigger("IsShooting");
-            GameObject bullet = (GameObject)Instantiate(bulletPrefab, GunTip.position, transform.rotation);
-            Bullet bulletScript = bullet.GetComponent<Bullet>();
             Guns gunScript = activeGun.GetComponent<Guns>();
-            bulletScript.playerBulletDamage = gunScript.GunDamage;
-            if (facingRight)
+            if(activeGun != Gun3)
             {
-                bulletScript.moveToX = 1;
+                GameObject bullet = (GameObject)Instantiate(bulletPrefab, GunTip.position, transform.rotation);
+                Bullet bulletScript = bullet.GetComponent<Bullet>();
+                bulletScript.playerBulletDamage = gunScript.GunDamage;
+                if (facingRight)
+                {
+                    bulletScript.moveToX = 1;
+                }
+                else
+                {
+                    bulletScript.moveToX = -1;
+                }
             }
-            else
+            else if (activeGun = Gun3)
             {
-                bulletScript.moveToX = -1;
+                Shotgun shotgunScript = activeGun.GetComponent<Shotgun>();
+                shotgunScript.Shoot(facingRight);
             }
         }
 

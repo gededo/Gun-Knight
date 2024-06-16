@@ -1,9 +1,10 @@
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float maxHealth = 11f;
+    public float maxHealth = 10f;
     public float currentHealth;
     public float speed = 2f;
     public Transform groundDetection;
@@ -15,7 +16,7 @@ public class Enemy : MonoBehaviour
     public float chaseDuration = 2f;
     public float damageAmount = 1f;
     public float damageInterval = 1f;
-    public float capsuleHeight = 2f; // Capsule height
+    public float capsuleHeight = 2f;
     public float moveDirection = 1f;
     public float stoppingDistance = 0.5f;
     public CapsuleCollider2D capsuleCollider;
@@ -24,15 +25,14 @@ public class Enemy : MonoBehaviour
     public PlayerController playerScript;
     public bool attackFrame = false;
 
-    Animator anim;
-    Rigidbody2D rb;
-    Transform t;
-
-    private bool movingRight = true;
-    private bool isChasing = false;
-    private Coroutine stopChaseCoroutine;
-    private Coroutine stopDamage;
-    private bool isPlayerInsideCapsule = false;
+    protected Rigidbody2D rb;
+    protected Transform t;
+    protected Animator anim;
+    protected bool movingRight = true;
+    protected bool isChasing = false;
+    protected Coroutine stopChaseCoroutine;
+    protected Coroutine stopDamage;
+    protected bool isPlayerInsideCapsule = false;
 
     void Start()
     {
@@ -50,15 +50,16 @@ public class Enemy : MonoBehaviour
         {
             isDead = true;
             anim.SetBool("isDead", true);
-            //Destroy(gameObject);
         }
-
-        CheckCapsuleCast();
+        if(!isDead && !playerScript.isDead)
+        {
+            CheckCapsuleCast();
+        }
     }
 
     private void FixedUpdate()
     {
-        if (!isDead)
+        if (!isDead && !playerScript.isDead)
         {
             if (!isChasing)
             {
@@ -72,7 +73,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void Patrol()
+    protected void Patrol()
     {
         rb.velocity = new Vector2((moveDirection) * speed, rb.velocity.y);
 
@@ -94,7 +95,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void CheckForPlayer()
+    protected void CheckForPlayer()
     {
         Vector2 direction = movingRight ? Vector2.right : Vector2.left;
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRange, playerLayer);
@@ -118,7 +119,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void FollowPlayer()
+    protected void FollowPlayer()
     {
         if (player != null)
         {
@@ -126,10 +127,12 @@ public class Enemy : MonoBehaviour
             Vector2 distance = (player.position - transform.position);
             if((distance.x * moveDirection) > stoppingDistance)
             {
-                rb.velocity = new Vector2(direction.x, 0) * speed;
+                anim.SetBool("isIdle", false);
+                rb.velocity = new Vector2(direction.x, rb.velocity.y) * speed;
             }
             else
             {
+                anim.SetBool("isIdle", true);
                 rb.velocity = new Vector2(0, 0);
             }
 
@@ -177,7 +180,7 @@ public class Enemy : MonoBehaviour
         stopChaseCoroutine = null;
     }
 
-    void Flip()
+    protected void Flip()
     {
         if (movingRight)
         {
@@ -193,7 +196,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void CheckCapsuleCast()
+    protected void CheckCapsuleCast()
     {
         Vector2 capsulePos = new Vector2(transform.position.x + capsuleCollider.offset.x, transform.position.y + capsuleCollider.offset.y);
         Vector2 capsuleSize = new Vector2(capsuleCollider.size.x, capsuleCollider.size.y);
