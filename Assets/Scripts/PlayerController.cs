@@ -19,6 +19,12 @@ public class PlayerController : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject Gun, Gun2, Gun3, activeGun;
     public Transform GunTip;
+    public float pistolCooldownTime;
+    public bool canPistolShoot = true;
+    public float shotgunCooldownTime;
+    public bool canShotgunShoot = true;
+    public float rifleCooldownTime;
+    public bool canRifleShoot = true;
 
     bool isGrounded;
     bool facingRight = true;
@@ -30,6 +36,7 @@ public class PlayerController : MonoBehaviour
     Transform t;
 
     bool isColliding;
+    bool isRifleShooting = false;
 
     void GroundCheck()
     {
@@ -87,6 +94,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Alpha1) && !Gun.activeInHierarchy)
         {
+            isRifleShooting = false;
             SwitchGuns(Gun);
         }
         if (Input.GetKey(KeyCode.Alpha2) && !Gun2.activeInHierarchy)
@@ -95,6 +103,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Alpha3) && !Gun3.activeInHierarchy)
         {
+            isRifleShooting = false;
             SwitchGuns(Gun3);
         }
 
@@ -114,11 +123,11 @@ public class PlayerController : MonoBehaviour
         //Shooting controls
         if(Input.GetMouseButtonDown(0) && !isDead)
         {
-            Animator GunAnim = activeGun.GetComponent<Animator>();
-            GunAnim.SetTrigger("IsShooting");
-            Guns gunScript = activeGun.GetComponent<Guns>();
-            if(activeGun != Gun3)
+            if (activeGun == Gun && canPistolShoot)
             {
+                Animator GunAnim = activeGun.GetComponent<Animator>();
+                GunAnim.SetTrigger("IsShooting");
+                Guns gunScript = activeGun.GetComponent<Guns>();
                 GameObject bullet = (GameObject)Instantiate(bulletPrefab, GunTip.position, transform.rotation);
                 Bullet bulletScript = bullet.GetComponent<Bullet>();
                 bulletScript.playerBulletDamage = gunScript.GunDamage;
@@ -130,12 +139,23 @@ public class PlayerController : MonoBehaviour
                 {
                     bulletScript.moveToX = -1;
                 }
+                StartCoroutine(pistolCooldown());    
             }
-            else if (activeGun = Gun3)
+            else if (activeGun == Gun2)
+            {
+                isRifleShooting = true;
+
+            }
+            else if (activeGun == Gun3 && canShotgunShoot)
             {
                 Shotgun shotgunScript = activeGun.GetComponent<Shotgun>();
                 shotgunScript.Shoot(facingRight);
+                StartCoroutine(shotgunCooldown());
             }
+        }
+        if(Input.GetMouseButtonUp(0) && !isDead && activeGun == Gun2)
+        {
+            isRifleShooting = false;
         }
 
         // Change facing direction
@@ -164,6 +184,25 @@ public class PlayerController : MonoBehaviour
         if (mainCamera)
         {
             mainCamera.transform.position = new Vector3(t.position.x, cameraPos.y, cameraPos.z);
+        }
+
+        if (isRifleShooting && canRifleShoot)
+        {
+            Animator GunAnim = activeGun.GetComponent<Animator>();
+            GunAnim.SetTrigger("IsShooting");
+            Guns gunScript = activeGun.GetComponent<Guns>();
+            GameObject bullet = (GameObject)Instantiate(bulletPrefab, GunTip.position, transform.rotation);
+            Bullet bulletScript = bullet.GetComponent<Bullet>();
+            bulletScript.playerBulletDamage = gunScript.GunDamage;
+            if (facingRight)
+            {
+                bulletScript.moveToX = 1;
+            }
+            else
+            {
+                bulletScript.moveToX = -1;
+            }
+            StartCoroutine(rifleCooldown());
         }
 
     }
@@ -196,6 +235,27 @@ public class PlayerController : MonoBehaviour
         isInvulnerable = true;
         yield return new WaitForSeconds(invulnerabilityDuration);
         isInvulnerable = false;
+    }
+
+    IEnumerator pistolCooldown()
+    {
+        canPistolShoot = false;
+        yield return new WaitForSeconds(pistolCooldownTime);
+        canPistolShoot = true;
+    }
+
+    IEnumerator shotgunCooldown()
+    {
+        canShotgunShoot = false;
+        yield return new WaitForSeconds(shotgunCooldownTime);
+        canShotgunShoot = true;
+    }
+
+    IEnumerator rifleCooldown()
+    {
+        canRifleShoot = false;
+        yield return new WaitForSeconds(rifleCooldownTime);
+        canRifleShoot = true;
     }
 
     public void TakeDamage(float damage)

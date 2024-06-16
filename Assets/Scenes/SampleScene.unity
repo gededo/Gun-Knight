@@ -770,6 +770,12 @@ MonoBehaviour:
   Gun3: {fileID: 1913905812}
   activeGun: {fileID: 1329808875}
   GunTip: {fileID: 1333570073}
+  pistolCooldownTime: 0.25
+  canPistolShoot: 1
+  shotgunCooldownTime: 1
+  canShotgunShoot: 1
+  rifleCooldownTime: 0
+  canRifleShoot: 1
 --- !u!61 &1404265437
 BoxCollider2D:
   m_ObjectHideFlags: 0
