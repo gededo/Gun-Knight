@@ -10,6 +10,7 @@ public class Shotgun : Guns
     public Transform shotgunTip;
     public LayerMask enemyLayer;
     public GameObject particleBullets;
+    public bool hasShot = false;
 
     void Awake()
     {
@@ -62,9 +63,31 @@ public class Shotgun : Guns
                         break;
                 }
                 enemyScript.TakeDamage(GunDamage);
+                hasShot = true;
                 GunDamage = tempGunDamage;
             }
         }
+
+        if (!hasShot)
+        {
+            Collider2D[] closeupRange = Physics2D.OverlapCircleAll(shotgunTip.position + new Vector3(-0.35f, 0, 0), 0.8f, enemyLayer);
+            foreach (Collider2D hit in closeupRange)
+            {
+                Enemy enemyScript = hit.GetComponent<Enemy>();
+
+                Vector2 directionToEnemy = facingRight ? (hit.transform.position - shotgunTip.position - new Vector3(-0.35f, 0, 0)).normalized :
+                    (hit.transform.position - shotgunTip.position + new Vector3(-0.35f, 0, 0)).normalized;
+                float angleToEnemy = Vector2.Angle(direction, directionToEnemy);
+
+                if (angleToEnemy < 90f / 2)
+                {
+                    GunDamage *= 10f;
+                    enemyScript.TakeDamage(GunDamage);
+                    GunDamage = tempGunDamage;
+                }
+            }
+        }
+        hasShot = false;
     }
 
     void OnDrawGizmosSelected()
@@ -75,6 +98,13 @@ public class Shotgun : Guns
         Gizmos.color = Color.blue;
         Gizmos.DrawRay(shotgunTip.position, fovLine1);
         Gizmos.DrawRay(shotgunTip.position, fovLine2);
+
+        Vector3 closeupLine1 = Quaternion.AngleAxis(90f / 2, Vector3.forward) * transform.right * 0.8f;
+        Vector3 closeupLine2 = Quaternion.AngleAxis(-90f / 2, Vector3.forward) * transform.right * 0.8f;
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawRay(shotgunTip.position + new Vector3(-0.35f, 0, 0), closeupLine1);
+        Gizmos.DrawRay(shotgunTip.position + new Vector3(-0.35f, 0, 0), closeupLine2);
     }
 
 }

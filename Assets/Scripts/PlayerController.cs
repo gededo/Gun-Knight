@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public bool canShotgunShoot = true;
     public float rifleCooldownTime;
     public bool canRifleShoot = true;
+    public int coinScore;
 
     bool isGrounded;
     bool facingRight = true;
@@ -183,7 +184,7 @@ public class PlayerController : MonoBehaviour
         // Camera follow
         if (mainCamera)
         {
-            mainCamera.transform.position = new Vector3(t.position.x, cameraPos.y, cameraPos.z);
+            mainCamera.transform.position = new Vector3(t.position.x + 5, t.position.y + 3, cameraPos.z);
         }
 
         if (isRifleShooting && canRifleShoot)
@@ -256,6 +257,12 @@ public class PlayerController : MonoBehaviour
         canRifleShoot = false;
         yield return new WaitForSeconds(rifleCooldownTime);
         canRifleShoot = true;
+    }
+
+    public void GetCoin(int value)
+    {
+        coinScore += value;
+        Debug.Log(coinScore);
     }
 
     public void TakeDamage(float damage)

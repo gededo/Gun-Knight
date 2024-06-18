@@ -8,12 +8,13 @@ public class Enemy : MonoBehaviour
     public float currentHealth;
     public float speed = 2f;
     public Transform groundDetection;
+    public Transform wallDetection;
     public Transform player;
     public float detectionRange = 5f;
     public float fovAngle = 45f;
     public LayerMask playerLayer;
     public LayerMask groundLayer;
-    public float chaseDuration = 2f;
+    public float chaseDuration = 3.5f;
     public float damageAmount = 1f;
     public float damageInterval = 1f;
     public float capsuleHeight = 2f;
@@ -93,6 +94,23 @@ public class Enemy : MonoBehaviour
                 movingRight = true;
             }
         }
+
+        RaycastHit2D wallInfo = Physics2D.Raycast(wallDetection.position, Vector2.right, 0.1f, groundLayer);
+        if (wallInfo.collider == true)
+        {
+            if (movingRight)
+            {
+                moveDirection = -1;
+                t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
+                movingRight = false;
+            }
+            else
+            {
+                moveDirection = 1;
+                t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
+                movingRight = true;
+            }
+        }
     }
 
     protected void CheckForPlayer()
@@ -147,6 +165,24 @@ public class Enemy : MonoBehaviour
 
             RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 1f);
             if (groundInfo.collider == false)
+            {
+                isChasing = false;
+                if (movingRight)
+                {
+                    moveDirection = -1;
+                    t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
+                    movingRight = false;
+                }
+                else
+                {
+                    moveDirection = 1;
+                    t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
+                    movingRight = true;
+                }
+            }
+
+            RaycastHit2D wallInfo = Physics2D.Raycast(wallDetection.position, Vector2.right, 0.1f, groundLayer);
+            if (wallInfo.collider == true)
             {
                 isChasing = false;
                 if (movingRight)
@@ -264,6 +300,8 @@ public class Enemy : MonoBehaviour
         {
             currentHealth -= damage;
             anim.SetBool("gettingHurt", true);
+            isChasing = true;
+            FollowPlayer();
             Debug.Log("Enemy took damage: " + damage + ". Current health: " + currentHealth);
         }
     }
