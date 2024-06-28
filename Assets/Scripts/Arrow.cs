@@ -21,7 +21,7 @@ public class Arrow : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = new Vector2((moveToX) * speed, rb.velocity.y);
-        //rb.AddForce((moveToX) * speed), 0f);
+        transform.right = rb.velocity;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

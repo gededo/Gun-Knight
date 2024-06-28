@@ -5,28 +5,26 @@ using UnityEngine;
 
 public class Thief : Enemy
 {
-
-    public float timebtwShots;
-    public float startTimeBtwShots;
-    //float damageAmountKnife;
-    float shootDamageInterval = 5f;
+    float shootDamageInterval = 2f;
     bool resetShootCooldown = true;
 
+    public float damageAmountKnife;
+    public float damageAmountArrow;
+    public GameObject Bow;
     public GameObject Arrow;
     public Transform BowTip;
 
     void Start()
     {
         maxHealth = 100f;
-        damageAmount = 5f;
-        //damageAmountKnife = 10f;
         damageInterval = 1f;
         capsuleHeight = 2f;
         stoppingDistance = 7f;
         retreatDistance = 5f;
-        movingRight = true;
-        player = GameObject.Find("Player").transform;
         chaseDuration = 1f;
+        movingRight = true;
+
+        player = GameObject.Find("Player").transform;
 
         currentHealth = maxHealth;
         capsuleCollider = GetComponent<CapsuleCollider2D>();
@@ -42,11 +40,20 @@ public class Thief : Enemy
         if (currentHealth <= 0)
         {
             isDead = true;
+            Bow.gameObject.SetActive(false);
             anim.SetBool("isDead", true);
         }
         if (!isDead && !playerScript.isDead)
         {
             CheckCapsuleCast();
+        }
+        if (isPlayerInsideCapsule)
+        {
+            damageAmount = damageAmountKnife;
+        }
+        else 
+        {
+            damageAmount = damageAmountArrow;
         }
     }
 
@@ -143,10 +150,11 @@ public class Thief : Enemy
                 }
             }
 
-            if (resetShootCooldown)
+            if (resetShootCooldown && !isPlayerInsideCapsule)
             {
                 GameObject arrow = (GameObject)Instantiate(Arrow, BowTip.position, transform.rotation);
                 Arrow arrowScript = arrow.GetComponent<Arrow>();
+                arrowScript.EnemyArrowDamage = damageAmountArrow;
                 if (movingRight)
                 {
                     arrowScript.moveToX = 1;
@@ -172,5 +180,15 @@ public class Thief : Enemy
     {
         yield return new WaitForSeconds(shootDamageInterval);
         resetShootCooldown = true;
+    }
+
+    public void disableBow()
+    {
+        Bow.gameObject.SetActive(false);
+    }
+
+    public void enableBow()
+    {
+        Bow.gameObject.SetActive(true);
     }
 }

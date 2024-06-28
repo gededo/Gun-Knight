@@ -214,6 +214,10 @@ public class PlayerController : MonoBehaviour
         {
             Move();
         }
+        else
+        {
+            rb.velocity = new Vector2(0f, rb.velocity.y);
+        }
         if(rb.velocity.x != 0 && !isDead)
         {
             anim.SetBool("isWalking", true);
