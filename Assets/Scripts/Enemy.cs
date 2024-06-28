@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     public float capsuleHeight = 2f;
     public float moveDirection = 1f;
     public float stoppingDistance = 0.5f;
+    public float retreatDistance = 5f;
     public CapsuleCollider2D capsuleCollider;
     public bool resetAttackCooldown = true;
     public bool isDead = false;
@@ -31,7 +32,7 @@ public class Enemy : MonoBehaviour
     protected Animator anim;
     protected bool movingRight = true;
     protected bool isChasing = false;
-    protected Coroutine stopChaseCoroutine;
+    public Coroutine stopChaseCoroutine;
     protected Coroutine stopDamage;
     protected bool isPlayerInsideCapsule = false;
 
