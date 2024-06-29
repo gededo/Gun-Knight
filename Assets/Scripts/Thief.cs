@@ -13,6 +13,7 @@ public class Thief : Enemy
     public GameObject Bow;
     public GameObject Arrow;
     public Transform BowTip;
+    public Transform groundDetectionBack;
 
     void Start()
     {
@@ -84,12 +85,24 @@ public class Thief : Enemy
             if ((distance.x * moveDirection) > stoppingDistance && (distance.x * moveDirection) > retreatDistance)
             {
                 anim.SetBool("isIdle", false);
-                rb.velocity = new Vector2(direction.x, rb.velocity.y) * speed;
+                rb.velocity = new Vector2((direction.x * speed), rb.velocity.y);
             }
             else if ((distance.x * moveDirection) < stoppingDistance && (distance.x * moveDirection) < retreatDistance)
             {
-                anim.SetBool("isIdle", false);
-                rb.velocity = new Vector2(-direction.x, rb.velocity.y) * speed;
+                //anim.SetBool("isIdle", false);
+                //rb.velocity = new Vector2(-direction.x, rb.velocity.y) * speed;
+
+                RaycastHit2D groundInfoBack = Physics2D.Raycast(groundDetectionBack.position, Vector2.down, 1f);
+                if (groundInfoBack.collider == true)
+                {
+                    anim.SetBool("isIdle", false);
+                    rb.velocity = new Vector2((-direction.x * speed), rb.velocity.y);
+                }
+                else
+                {
+                    anim.SetBool("isIdle", true);
+                    rb.velocity = new Vector2(0f, rb.velocity.y);
+                }
             }
             else
             {

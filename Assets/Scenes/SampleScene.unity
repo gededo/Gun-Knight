@@ -531,6 +531,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedKnight
       objectReference: {fileID: 0}
+    - target: {fileID: 5649972541194831263, guid: cb174b8ba9c1d3548a79e96a0222840c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
