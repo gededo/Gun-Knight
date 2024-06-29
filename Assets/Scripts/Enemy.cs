@@ -164,7 +164,7 @@ public class Enemy : MonoBehaviour
                 Flip();
             }
 
-            RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 1f);
+            RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 1f, groundLayer);
             if (groundInfo.collider == false)
             {
                 isChasing = false;

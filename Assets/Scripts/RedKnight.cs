@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class RedKnight : Enemy
 {
+    public float redKnightHealth = 12f;
+    public bool startFacingRight = true;
+
     void Start()
     {
-        maxHealth = 12f;
+        maxHealth = redKnightHealth;
         damageAmount = 2f;
         damageInterval = 1f;
         capsuleHeight = 2f;
         stoppingDistance = 0.5f;
-        movingRight = true;
+        movingRight = startFacingRight;
+
         player = GameObject.Find("Player").transform;
 
         currentHealth = maxHealth;
@@ -20,6 +24,17 @@ public class RedKnight : Enemy
         rb = GetComponent<Rigidbody2D>();
         playerScript = player.GetComponent<PlayerController>();
         t = transform;
+
+        if (movingRight)
+        {
+            moveDirection = 1;
+            t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
+        }
+        else
+        {
+            moveDirection = -1;
+            t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
+        }
     }
 
     void Update()
@@ -48,6 +63,10 @@ public class RedKnight : Enemy
             {
                 FollowPlayer();
             }
+        }
+        else if (!isDead && playerScript.isDead && !anim.GetBool("isIdle"))
+        {
+            anim.SetBool("isIdle", true);
         }
     }
 }

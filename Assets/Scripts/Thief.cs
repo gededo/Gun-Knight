@@ -10,6 +10,8 @@ public class Thief : Enemy
 
     public float damageAmountKnife;
     public float damageAmountArrow;
+    public float thiefHealth = 9f;
+    public bool startFacingRight = true;
     public GameObject Bow;
     public GameObject Arrow;
     public Transform BowTip;
@@ -17,13 +19,13 @@ public class Thief : Enemy
 
     void Start()
     {
-        maxHealth = 100f;
+        maxHealth = thiefHealth;
         damageInterval = 1f;
         capsuleHeight = 2f;
         stoppingDistance = 7f;
         retreatDistance = 5f;
         chaseDuration = 1f;
-        movingRight = true;
+        movingRight = startFacingRight;
 
         player = GameObject.Find("Player").transform;
 
@@ -33,6 +35,17 @@ public class Thief : Enemy
         rb = GetComponent<Rigidbody2D>();
         playerScript = player.GetComponent<PlayerController>();
         t = transform;
+
+        if (movingRight)
+        {
+            moveDirection = 1;
+            t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
+        }
+        else
+        {
+            moveDirection = -1;
+            t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
+        }
     }
 
     void Update()
@@ -73,6 +86,10 @@ public class Thief : Enemy
                 FollowPlayerThief();
             }
         }
+        else if (!isDead && playerScript.isDead && !anim.GetBool("isIdle"))
+        {
+            anim.SetBool("isIdle", true);
+        }
     }
 
     protected void FollowPlayerThief()
@@ -89,10 +106,8 @@ public class Thief : Enemy
             }
             else if ((distance.x * moveDirection) < stoppingDistance && (distance.x * moveDirection) < retreatDistance)
             {
-                //anim.SetBool("isIdle", false);
-                //rb.velocity = new Vector2(-direction.x, rb.velocity.y) * speed;
 
-                RaycastHit2D groundInfoBack = Physics2D.Raycast(groundDetectionBack.position, Vector2.down, 1f);
+                RaycastHit2D groundInfoBack = Physics2D.Raycast(groundDetectionBack.position, Vector2.down, 1f, groundLayer);
                 if (groundInfoBack.collider == true)
                 {
                     anim.SetBool("isIdle", false);
@@ -119,22 +134,11 @@ public class Thief : Enemy
                 Flip();
             }
 
-            RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 1f);
+            RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 1f, groundLayer);
             if (groundInfo.collider == false)
             {
-                isChasing = false;
-                if (movingRight)
-                {
-                    moveDirection = -1;
-                    t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
-                    movingRight = false;
-                }
-                else
-                {
-                    moveDirection = 1;
-                    t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
-                    movingRight = true;
-                }
+                anim.SetBool("isIdle", true);
+                rb.velocity = new Vector2(0f, rb.velocity.y);
             }
 
             RaycastHit2D wallInfo = Physics2D.Raycast(wallDetection.position, Vector2.right, 0.1f, groundLayer);

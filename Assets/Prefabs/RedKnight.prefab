@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717362689}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.404, y: 0.485, z: 0}
+  m_LocalPosition: {x: 0.472, y: 0.485, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -99,7 +99,7 @@ Transform:
   - {fileID: 5649972539917553076}
   - {fileID: 1717362690}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5649972541194831262
 SpriteRenderer:
@@ -140,7 +140,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1802687089
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 564702936, guid: a6df4f9d1ea98984f9213380098cbbd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -277,11 +277,14 @@ MonoBehaviour:
   capsuleHeight: 2
   moveDirection: 1
   stoppingDistance: 1
+  retreatDistance: 5
   capsuleCollider: {fileID: 0}
   resetAttackCooldown: 1
   isDead: 0
   playerScript: {fileID: 0}
   attackFrame: 0
+  redKnightHealth: 12
+  startFacingRight: 1
 --- !u!70 &5649972541194831328
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

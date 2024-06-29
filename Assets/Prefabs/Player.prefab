@@ -68,7 +68,7 @@ Transform:
   - {fileID: 6461931891210295259}
   - {fileID: 6461931890987488300}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6461931890444293478
 SpriteRenderer:
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpHeight: 15
+  jumpHeight: 16
   maxHealth: 100
   currentHealth: 0
   damageFromEnemyCollision: 10
@@ -215,7 +215,6 @@ MonoBehaviour:
   invulnerabilityDuration: 0.5
   isInvulnerable: 0
   isDead: 0
-  mainCamera: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64

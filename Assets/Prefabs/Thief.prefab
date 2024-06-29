@@ -134,7 +134,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 2
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c2120b71e975a8547a2a8252b750a283, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -258,7 +258,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1802687089
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1373657157, guid: f5354f3fe7be172438968a44940c8483, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -286,7 +286,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 384
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -438,6 +438,8 @@ MonoBehaviour:
   attackFrame: 1
   damageAmountKnife: 4
   damageAmountArrow: 3
+  thiefHealth: 9
+  startFacingRight: 1
   Bow: {fileID: 2652938643533640717}
   Arrow: {fileID: 995745942634551303, guid: 912eb0aa71a3692498527030f6a87556, type: 3}
   BowTip: {fileID: 7896986322441129501}
