@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public float invulnerabilityDuration = 1.5f;
     public bool isInvulnerable = false;
     public bool isDead = false;
-    public Camera mainCamera;
+    //public Camera mainCamera;
     public LayerMask groundLayer;
     public GameObject bulletPrefab;
     public GameObject Gun, Gun2, Gun3, activeGun;
@@ -76,10 +76,10 @@ public class PlayerController : MonoBehaviour
         facingRight = t.localScale.x > 0;
         activeGun = Gun;
 
-        if (mainCamera)
+        /*if (mainCamera)
         {
             cameraPos = mainCamera.transform.position;
-        }
+        }*/
 
         currentHealth = maxHealth;
     }
@@ -181,11 +181,11 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isJumping", true);
         }
 
-        // Camera follow
+        /* Camera follow
         if (mainCamera)
         {
             mainCamera.transform.position = new Vector3(t.position.x + 5, t.position.y + 3, cameraPos.z);
-        }
+        }*/
 
         if (isRifleShooting && canRifleShoot)
         {
