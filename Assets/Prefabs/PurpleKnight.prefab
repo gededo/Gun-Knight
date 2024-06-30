@@ -142,12 +142,12 @@ SpriteRenderer:
   m_SortingLayerID: 1802687089
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 564702936, guid: a6df4f9d1ea98984f9213380098cbbd4, type: 3}
+  m_Sprite: {fileID: -218123355, guid: d0f11faa70a7e994585d6a40e1359e39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0769231, y: 1.3076923}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -188,9 +188,9 @@ BoxCollider2D:
   m_Offset: {x: -0.0044846535, y: 0.6565325}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.0769231, y: 1.3076923}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 1.0769231, y: 1.3076923}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -276,15 +276,15 @@ MonoBehaviour:
   damageInterval: 1
   capsuleHeight: 2
   moveDirection: 1
-  stoppingDistance: 1
+  stoppingDistance: 1.2
   retreatDistance: 5
   capsuleCollider: {fileID: 0}
   resetAttackCooldown: 1
   isDead: 0
   playerScript: {fileID: 0}
   attackFrame: 0
-  redKnightHealth: 12
-  redKnightDamageInterval: 1
+  redKnightHealth: 24
+  redKnightDamageInterval: 2
   redKnightDamage: 10
   startFacingRight: 1
 --- !u!70 &5649972541194831328

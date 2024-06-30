@@ -20,7 +20,7 @@ AnimatorStateMachine:
     m_Position: {x: 460, y: 290, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2304891335254324678}
-    m_Position: {x: 300, y: 0, z: 0}
+    m_Position: {x: 310, y: 10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -166865935578929154}
     m_Position: {x: 260, y: 450, z: 0}
@@ -95,7 +95,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RedKnightIdle
+  m_Name: PurpleKnightIdle
   m_Speed: 0.34
   m_CycleOffset: 0
   m_Transitions:
@@ -111,7 +111,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 921c8ce7e43c1834a8180f0a797c94d6, type: 2}
+  m_Motion: {fileID: 7400000, guid: 84d91cb92bd51b94981b37660f3f9468, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -202,7 +202,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RedKnightAttack
+  m_Name: PurpleKnightAttack
   m_Speed: 0.2
   m_CycleOffset: 0
   m_Transitions:
@@ -218,7 +218,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: bef5a9b6fed221448ba9d775b484ce47, type: 2}
+  m_Motion: {fileID: 7400000, guid: a9839910543d6374ba2815c6bc35a3fe, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -311,7 +311,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RedKnightDie
+  m_Name: PurpleKnightDie
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -324,7 +324,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4a7714698d66bdf45a76f2e480f68104, type: 2}
+  m_Motion: {fileID: 7400000, guid: d9d1f347691e0c941874e959c9569344, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -337,7 +337,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RedKnightHurt
+  m_Name: PurpleKnightHurt
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -353,7 +353,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d25f1ee9fe6e18647b60592537bcd42f, type: 2}
+  m_Motion: {fileID: 7400000, guid: ff2b5bdd3aff2ab4d9c0b1539b2716f0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -388,7 +388,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RedKnightWalk
+  m_Name: PurpleKnightWalk
   m_Speed: 0.12
   m_CycleOffset: 0
   m_Transitions:
@@ -404,7 +404,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: a2d0404b9b55c4e4fbb575abdbec3a2a, type: 2}
+  m_Motion: {fileID: 7400000, guid: 0cf46a78e67883441ac01fbe4f79c06e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
