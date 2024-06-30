@@ -38,7 +38,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Interface
   m_SortingLayers:
   - name: Default
     uniqueID: 0
@@ -57,4 +57,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2015137563
+    locked: 0
+  - name: Interface
+    uniqueID: 1458443163
     locked: 0

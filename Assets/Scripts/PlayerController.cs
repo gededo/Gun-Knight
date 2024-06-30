@@ -2,42 +2,52 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5f;
-    public float jumpHeight = 12f;
     public float maxHealth;
     public float currentHealth;
+    public float speed = 5f;
+    public float jumpHeight = 12f;
     public float damageFromEnemyCollision = 10f;
     public float damageFromProjectile = 20f;
     public float invulnerabilityDuration = 1.5f;
-    public bool isInvulnerable = false;
+
+    public int coinScore;
+
     public bool isDead = false;
-    //public Camera mainCamera;
+    public bool isInvulnerable = false;
+
+    public bool canPistolShoot = true;
+    public float pistolCooldownTime;
+
+    public bool canRifleShoot = true;
+    public float rifleCooldownTime;
+
+    public bool canShotgunShoot = true;
+    public float shotgunCooldownTime;
+
     public LayerMask groundLayer;
+
     public GameObject bulletPrefab;
     public GameObject Gun, Gun2, Gun3, activeGun;
     public Transform GunTip;
-    public float pistolCooldownTime;
-    public bool canPistolShoot = true;
-    public float shotgunCooldownTime;
-    public bool canShotgunShoot = true;
-    public float rifleCooldownTime;
-    public bool canRifleShoot = true;
-    public int coinScore;
+    public Text scoreTxt;
+    //public Camera mainCamera;
 
     bool isGrounded;
     bool facingRight = true;
+    bool isColliding;
+    bool isRifleShooting = false;
+
     float moveDirection = 0;
+
     Vector3 cameraPos;
     Rigidbody2D rb;
     BoxCollider2D mainCollider;
     Animator anim;
     Transform t;
-
-    bool isColliding;
-    bool isRifleShooting = false;
 
     void GroundCheck()
     {
@@ -263,10 +273,15 @@ public class PlayerController : MonoBehaviour
         canRifleShoot = true;
     }
 
-    public void GetCoin(int value)
+    public void GetCoin(int coinValue)
     {
-        coinScore += value;
-        Debug.Log(coinScore);
+        coinScore += coinValue;
+        UpdateScoreText();
+    }
+
+    private void UpdateScoreText()
+    {
+        scoreTxt.text = coinScore.ToString();
     }
 
     public void TakeDamage(float damage)
