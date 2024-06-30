@@ -9,6 +9,7 @@ public class CameraFollow : MonoBehaviour
     public float smoothTime = 0.25f;
     public float minY = -4f;
     public float maxY = 0f;
+    public bool canControl = true;
     public Transform target;
     public Vector3 offset = new Vector3(0f, 4f, -10f);
 
@@ -21,7 +22,7 @@ public class CameraFollow : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && canControl)
         {
             offsetDirection = Input.GetKey(KeyCode.A) ? -2.6f : 2.6f;
         }

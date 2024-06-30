@@ -187,7 +187,7 @@ public class PlayerController : MonoBehaviour
             mainCamera.transform.position = new Vector3(t.position.x + 5, t.position.y + 3, cameraPos.z);
         }*/
 
-        if (isRifleShooting && canRifleShoot)
+        if (isRifleShooting && canRifleShoot && !isDead)
         {
             Animator GunAnim = activeGun.GetComponent<Animator>();
             GunAnim.SetTrigger("IsShooting");
