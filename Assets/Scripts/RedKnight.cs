@@ -5,13 +5,16 @@ using UnityEngine;
 public class RedKnight : Enemy
 {
     public float redKnightHealth = 12f;
+    public float redKnightDamageInterval = 1f;
+    public float redKnightDamage = 10f;
     public bool startFacingRight = true;
+
 
     void Start()
     {
         maxHealth = redKnightHealth;
-        damageAmount = 2f;
-        damageInterval = 1f;
+        damageAmount = redKnightDamage;
+        damageInterval = redKnightDamageInterval;
         capsuleHeight = 2f;
         stoppingDistance = 0.5f;
         movingRight = startFacingRight;
