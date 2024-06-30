@@ -8,9 +8,14 @@ public class Thief : Enemy
     float shootDamageInterval = 2f;
     bool resetShootCooldown = true;
 
+    public float thiefMaxHealth = 9f;
+    public float thiefDamageInterval = 1f;
+    public float thiefCapsuleHeight = 2f;
+    public float thiefStoppingDistance = 7f;
+    public float thiefRetreatDistance = 5f;
+    public float thiefChaseDuration = 1f;
     public float damageAmountKnife;
     public float damageAmountArrow;
-    public float thiefHealth = 9f;
     public bool startFacingRight = true;
     public GameObject Bow;
     public GameObject Arrow;
@@ -19,12 +24,12 @@ public class Thief : Enemy
 
     void Start()
     {
-        maxHealth = thiefHealth;
-        damageInterval = 1f;
-        capsuleHeight = 2f;
-        stoppingDistance = 7f;
-        retreatDistance = 5f;
-        chaseDuration = 1f;
+        maxHealth = thiefMaxHealth;
+        damageInterval = thiefDamageInterval;
+        capsuleHeight = thiefCapsuleHeight;
+        stoppingDistance = thiefStoppingDistance;
+        retreatDistance = thiefRetreatDistance;
+        chaseDuration = thiefChaseDuration;
         movingRight = startFacingRight;
 
         player = GameObject.Find("Player").transform;

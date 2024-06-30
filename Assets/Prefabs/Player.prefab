@@ -68,7 +68,7 @@ Transform:
   - {fileID: 6461931891210295259}
   - {fileID: 6461931890987488300}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6461931890444293478
 SpriteRenderer:
@@ -109,7 +109,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 2
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -75679465, guid: fbe4a3429c2b09a45894fa6520d712db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -181,7 +181,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00021271408, y: 0.0831208}
+  m_Offset: {x: 0, y: 0.085}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -192,7 +192,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.12341067, y: 0.16796894}
+  m_Size: {x: 0.08, y: 0.17}
   m_EdgeRadius: 0
 --- !u!114 &6461931890444293477
 MonoBehaviour:
@@ -206,15 +206,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fcf1004bf2187847aa3caa4cc10ed87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  jumpHeight: 16
   maxHealth: 100
   currentHealth: 0
+  speed: 5
+  jumpHeight: 16
   damageFromEnemyCollision: 10
   damageFromProjectile: 20
   invulnerabilityDuration: 0.5
-  isInvulnerable: 0
+  coinScore: 0
   isDead: 0
+  isInvulnerable: 0
+  canPistolShoot: 1
+  pistolCooldownTime: 0.3
+  canRifleShoot: 1
+  rifleCooldownTime: 0.18
+  canShotgunShoot: 1
+  shotgunCooldownTime: 0.8
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -224,13 +231,7 @@ MonoBehaviour:
   Gun3: {fileID: 6461931890987488301}
   activeGun: {fileID: 6461931890504069970}
   GunTip: {fileID: 6461931890507816096}
-  pistolCooldownTime: 0.3
-  canPistolShoot: 1
-  shotgunCooldownTime: 0.8
-  canShotgunShoot: 1
-  rifleCooldownTime: 0.18
-  canRifleShoot: 1
-  coinScore: 0
+  scoreTxt: {fileID: 0}
 --- !u!95 &6461931890444293464
 Animator:
   serializedVersion: 5
@@ -325,7 +326,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 2
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: -873133600, guid: e8d4a696d46da994483ef49263ac3d5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -476,7 +477,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 2
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 1418744057, guid: e8d4a696d46da994483ef49263ac3d5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -635,7 +636,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 2
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: 2077072169, guid: e8d4a696d46da994483ef49263ac3d5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

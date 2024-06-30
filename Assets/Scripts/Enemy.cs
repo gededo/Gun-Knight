@@ -4,37 +4,37 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float maxHealth = 10f;
     public float currentHealth;
-    public float speed = 2f;
+    public float fovAngle = 45f;
+    public float moveDirection = 1f;
+    public bool resetAttackCooldown = true;
+    public bool isDead = false;
+    public bool attackFrame = false;
+    public LayerMask playerLayer;
+    public LayerMask groundLayer;
     public Transform groundDetection;
     public Transform wallDetection;
     public Transform player;
-    public float detectionRange = 5f;
-    public float fovAngle = 45f;
-    public LayerMask playerLayer;
-    public LayerMask groundLayer;
-    public float chaseDuration = 3.5f;
-    public float damageAmount = 1f;
-    public float damageInterval = 1f;
-    public float capsuleHeight = 2f;
-    public float moveDirection = 1f;
-    public float stoppingDistance = 0.5f;
-    public float retreatDistance = 5f;
     public CapsuleCollider2D capsuleCollider;
-    public bool resetAttackCooldown = true;
-    public bool isDead = false;
     public PlayerController playerScript;
-    public bool attackFrame = false;
+    public Coroutine stopChaseCoroutine;
 
+    protected float maxHealth = 10f;
+    protected float speed = 2f;
+    protected float damageAmount = 1f;
+    protected float damageInterval = 1f;
+    protected float detectionRange = 5f;
+    protected float capsuleHeight = 2f;
+    protected float stoppingDistance = 0.5f;
+    protected float retreatDistance = 5f;
+    protected float chaseDuration = 3.5f;
+    protected bool movingRight = true;
+    protected bool isChasing = false;
+    protected bool isPlayerInsideCapsule = false;
     protected Rigidbody2D rb;
     protected Transform t;
     protected Animator anim;
-    protected bool movingRight = true;
-    protected bool isChasing = false;
-    public Coroutine stopChaseCoroutine;
     protected Coroutine stopDamage;
-    protected bool isPlayerInsideCapsule = false;
 
     void Start()
     {
