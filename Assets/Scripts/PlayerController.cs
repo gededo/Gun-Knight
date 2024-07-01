@@ -11,9 +11,11 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
     public float jumpHeight = 12f;
     public float damageMultiplier = 1f;
-    //public float damageFromEnemyCollision = 10f;
-    //public float damageFromProjectile = 20f;
+    public float fireRateMultiplier = 1f;
+    public float maxShields = 0f;
+    public float shields = 0f;
     public float invulnerabilityDuration = 1.5f;
+    public float shieldRegenTime = 45f;
 
     public int coinScore;
 
@@ -33,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject bulletPrefab;
     public GameObject Gun, Gun2, Gun3, activeGun;
+    public Coroutine shieldRegenCoroutine;
     public Transform GunTip;
     public Text scoreTxt;
     //public Camera mainCamera;
@@ -86,6 +89,8 @@ public class PlayerController : MonoBehaviour
         GunTip = activeGun.gameObject.transform.GetChild(0);
         facingRight = t.localScale.x > 0;
         activeGun = Gun;
+        coinScore = PlayerPrefs.GetInt("wallet");
+        scoreTxt.text = coinScore.ToString();
 
         /*if (mainCamera)
         {
@@ -211,6 +216,11 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(rifleCooldown());
         }
 
+        if(shields < maxShields && shieldRegenCoroutine == null)
+        {
+            shieldRegenCoroutine = StartCoroutine(shieldRegen());
+        }
+
     }
 
     void FixedUpdate()
@@ -250,27 +260,38 @@ public class PlayerController : MonoBehaviour
     IEnumerator pistolCooldown()
     {
         canPistolShoot = false;
-        yield return new WaitForSeconds(pistolCooldownTime);
+        yield return new WaitForSeconds(pistolCooldownTime * fireRateMultiplier / 100);
         canPistolShoot = true;
     }
 
     IEnumerator shotgunCooldown()
     {
         canShotgunShoot = false;
-        yield return new WaitForSeconds(shotgunCooldownTime);
+        yield return new WaitForSeconds(shotgunCooldownTime * fireRateMultiplier / 100);
         canShotgunShoot = true;
     }
 
     IEnumerator rifleCooldown()
     {
         canRifleShoot = false;
-        yield return new WaitForSeconds(rifleCooldownTime);
+        yield return new WaitForSeconds(rifleCooldownTime * fireRateMultiplier / 100);
         canRifleShoot = true;
+    }
+
+    IEnumerator shieldRegen()
+    {
+        yield return new WaitForSeconds(shieldRegenTime);
+        if(shields < maxShields)
+        {
+            shields++;
+        }
+        shieldRegenCoroutine = null;
     }
 
     public void GetCoin(int coinValue)
     {
         coinScore += coinValue;
+        PlayerPrefs.SetInt("wallet", PlayerPrefs.GetInt("wallet") +1);
         UpdateScoreText();
     }
 
@@ -285,8 +306,15 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(InvulnerabilityCoroutine());
             anim.Play("PlayerHurt");
-            currentHealth -= damage;
-            Debug.Log("Player took damage: " + damage + ". Current health: " + currentHealth);
+            if(shields <= 0)
+            {
+                currentHealth -= damage;
+            }
+            else
+            {
+                shields--;
+            }
+            //Debug.Log("Player took damage: " + damage + ". Current health: " + currentHealth);
         }
         
     }

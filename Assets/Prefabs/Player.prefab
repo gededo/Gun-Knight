@@ -68,7 +68,7 @@ Transform:
   - {fileID: 6461931891210295259}
   - {fileID: 6461931890987488300}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6461931890444293478
 SpriteRenderer:
@@ -211,16 +211,20 @@ MonoBehaviour:
   speed: 5
   jumpHeight: 16
   damageMultiplier: 1
+  fireRateMultiplier: 1
+  maxShields: 0
+  shields: 0
   invulnerabilityDuration: 0.5
+  shieldRegenTime: 45
   coinScore: 0
   isDead: 0
   isInvulnerable: 0
   canPistolShoot: 1
-  pistolCooldownTime: 0.3
+  pistolCooldownTime: 30
   canRifleShoot: 1
-  rifleCooldownTime: 0.2
+  rifleCooldownTime: 20
   canShotgunShoot: 1
-  shotgunCooldownTime: 0.8
+  shotgunCooldownTime: 80
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
