@@ -13,7 +13,7 @@ public class Coin : MonoBehaviour
             PlayerController playerScript = collision.gameObject.GetComponent<PlayerController>();
             if (playerScript != null)
             {
-                //playerScript.GetCoin(coinValue);
+                playerScript.GetCoin(coinValue);
                 Destroy(gameObject);
             }
         }
