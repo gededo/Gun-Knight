@@ -14,6 +14,7 @@ public class Coin : MonoBehaviour
             if (playerScript != null)
             {
                 playerScript.GetCoin(coinValue);
+                PlayerPrefs.SetString("coins", (PlayerPrefs.GetString("coins") + gameObject.name));
                 Destroy(gameObject);
             }
         }
