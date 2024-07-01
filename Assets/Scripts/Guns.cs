@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class Guns : MonoBehaviour
 {
+    [HideInInspector]
     public float GunDamage;
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 }

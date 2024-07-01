@@ -10,8 +10,9 @@ public class PlayerController : MonoBehaviour
     public float currentHealth;
     public float speed = 5f;
     public float jumpHeight = 12f;
-    public float damageFromEnemyCollision = 10f;
-    public float damageFromProjectile = 20f;
+    public float damageMultiplier = 1f;
+    //public float damageFromEnemyCollision = 10f;
+    //public float damageFromProjectile = 20f;
     public float invulnerabilityDuration = 1.5f;
 
     public int coinScore;
@@ -138,10 +139,10 @@ public class PlayerController : MonoBehaviour
             {
                 Animator GunAnim = activeGun.GetComponent<Animator>();
                 GunAnim.SetTrigger("IsShooting");
-                Guns gunScript = activeGun.GetComponent<Guns>();
+                Pistol pistolScript = activeGun.GetComponent<Pistol>();
                 GameObject bullet = (GameObject)Instantiate(bulletPrefab, GunTip.position, transform.rotation);
                 Bullet bulletScript = bullet.GetComponent<Bullet>();
-                bulletScript.playerBulletDamage = gunScript.GunDamage;
+                bulletScript.playerBulletDamage = pistolScript.GunDamage * damageMultiplier;
                 if (facingRight)
                 {
                     bulletScript.moveToX = 1;
@@ -160,7 +161,7 @@ public class PlayerController : MonoBehaviour
             else if (activeGun == Gun3 && canShotgunShoot)
             {
                 Shotgun shotgunScript = activeGun.GetComponent<Shotgun>();
-                shotgunScript.Shoot(facingRight);
+                shotgunScript.Shoot(facingRight, damageMultiplier);
                 StartCoroutine(shotgunCooldown());
             }
         }
@@ -191,12 +192,6 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isJumping", true);
         }
 
-        /* Camera follow
-        if (mainCamera)
-        {
-            mainCamera.transform.position = new Vector3(t.position.x + 5, t.position.y + 3, cameraPos.z);
-        }*/
-
         if (isRifleShooting && canRifleShoot && !isDead)
         {
             Animator GunAnim = activeGun.GetComponent<Animator>();
@@ -204,7 +199,7 @@ public class PlayerController : MonoBehaviour
             Guns gunScript = activeGun.GetComponent<Guns>();
             GameObject bullet = (GameObject)Instantiate(bulletPrefab, GunTip.position, transform.rotation);
             Bullet bulletScript = bullet.GetComponent<Bullet>();
-            bulletScript.playerBulletDamage = gunScript.GunDamage;
+            bulletScript.playerBulletDamage = gunScript.GunDamage * damageMultiplier;
             if (facingRight)
             {
                 bulletScript.moveToX = 1;

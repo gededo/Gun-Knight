@@ -9,6 +9,7 @@ public class Thief : Enemy
     bool resetShootCooldown = true;
 
     public float thiefMaxHealth = 9f;
+    public float thiefSpeed = 2f;
     public float thiefDamageInterval = 1f;
     public float thiefCapsuleHeight = 2f;
     public float thiefStoppingDistance = 7f;
@@ -25,6 +26,7 @@ public class Thief : Enemy
     void Start()
     {
         maxHealth = thiefMaxHealth;
+        speed = thiefSpeed;
         damageInterval = thiefDamageInterval;
         capsuleHeight = thiefCapsuleHeight;
         stoppingDistance = thiefStoppingDistance;

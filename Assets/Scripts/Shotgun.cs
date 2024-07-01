@@ -7,22 +7,18 @@ public class Shotgun : Guns
 {
     public float fovAngle = 60f;
     public float fovRange = 5f;
+    public float shotgunDamageMultiplier = 1f;
+    public bool hasShot = false;
     public Transform shotgunTip;
     public LayerMask enemyLayer;
     public GameObject particleBullets;
-    public bool hasShot = false;
 
     void Awake()
     {
         GunDamage = 1f;
     }
 
-    void Update()
-    {
-
-    }
-
-    public void Shoot(bool facingRight) 
+    public void Shoot(bool facingRight, float damageMultiplier) 
     {
         if (facingRight) 
         {
@@ -46,20 +42,21 @@ public class Shotgun : Guns
 
             if (angleToEnemy < fovAngle / 2)
             {
+                shotgunDamageMultiplier = damageMultiplier;
                 float distanceToEnemy = Vector3.Distance(hit.transform.position, shotgunTip.position);
                 switch (distanceToEnemy)
                 {
                     case < 2f:
-                        GunDamage *= 10f;
+                        GunDamage *= 10f * shotgunDamageMultiplier;
                         break;
                     case < 3.5f:
-                        GunDamage *= 6f;
+                        GunDamage *= 6f * shotgunDamageMultiplier;
                         break;
                     case < 4.3f:
-                        GunDamage *= 4f;
+                        GunDamage *= 4f * shotgunDamageMultiplier;
                         break;
                     case <= 5.5f:
-                        GunDamage *= 1f;
+                        GunDamage *= 1f * shotgunDamageMultiplier;
                         break;
                 }
                 enemyScript.TakeDamage(GunDamage);
