@@ -68,7 +68,7 @@ Transform:
   - {fileID: 6461931891210295259}
   - {fileID: 6461931890987488300}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6461931890444293478
 SpriteRenderer:
@@ -210,8 +210,7 @@ MonoBehaviour:
   currentHealth: 0
   speed: 5
   jumpHeight: 16
-  damageFromEnemyCollision: 10
-  damageFromProjectile: 20
+  damageMultiplier: 1
   invulnerabilityDuration: 0.5
   coinScore: 0
   isDead: 0
@@ -219,7 +218,7 @@ MonoBehaviour:
   canPistolShoot: 1
   pistolCooldownTime: 0.3
   canRifleShoot: 1
-  rifleCooldownTime: 0.18
+  rifleCooldownTime: 0.2
   canShotgunShoot: 1
   shotgunCooldownTime: 0.8
   groundLayer:
@@ -372,6 +371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GunDamage: 0
+  pistolDamageMultiplier: 1
 --- !u!1 &6461931890507816097
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,12 +505,13 @@ MonoBehaviour:
   GunDamage: 0
   fovAngle: 60
   fovRange: 5
+  shotgunDamageMultiplier: 1
+  hasShot: 0
   shotgunTip: {fileID: 6461931891174449393}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
   particleBullets: {fileID: 1253761940765890350, guid: fcac199dc3226fa488038153122282d5, type: 3}
-  hasShot: 0
 --- !u!95 &6461931890987488289
 Animator:
   serializedVersion: 5
@@ -682,3 +683,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GunDamage: 0
+  rifleDamageMultiplier: 1
