@@ -10,6 +10,7 @@ public class KillPlayer : MonoBehaviour
         {
             PlayerController playerScript = collision.GetComponent<PlayerController>();
             playerScript.currentHealth = 0;
+            playerScript.SetHealthSlider(playerScript.currentHealth);
         }
     }
 }

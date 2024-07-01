@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public float shieldRegenTime = 45f;
 
     public int coinScore;
+    public Slider healthSlider;
 
     public bool isDead = false;
     public bool isInvulnerable = false;
@@ -300,6 +301,11 @@ public class PlayerController : MonoBehaviour
         scoreTxt.text = coinScore.ToString();
     }
 
+    public void SetHealthSlider(float health)
+    {
+        healthSlider.value = health;
+    }
+
     public void TakeDamage(float damage)
     {
         if (!isInvulnerable && !isDead)
@@ -309,6 +315,7 @@ public class PlayerController : MonoBehaviour
             if(shields <= 0)
             {
                 currentHealth -= damage;
+                SetHealthSlider(currentHealth);
             }
             else
             {
