@@ -9,7 +9,10 @@ public class SceneManagerScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-            SceneManager.LoadScene("fase3");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //SceneManager.LoadScene("fase3");
+            //PlayerPrefs.SetString("coins", "");
+            //PlayerPrefs.SetInt("wallet", 0);
         }
         if (Input.GetKeyDown(KeyCode.H))
         {
@@ -18,6 +21,7 @@ public class SceneManagerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.U))
         {
             PlayerPrefs.SetString("coins", "");
+            PlayerPrefs.SetInt("wallet", 0);
         }
     }
 }

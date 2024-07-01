@@ -1241,7 +1241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3359322409592459787, guid: 7d79d171a2f15384f81317d36d3076b7, type: 3}
       propertyPath: m_Name
-      value: Big Coin
+      value: Big Coin (0)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4200,6 +4200,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1107948653
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2059682226430716224, guid: 95154661354830540acb25d5785c46be, type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059682226430716224, guid: 95154661354830540acb25d5785c46be, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059682226430716224, guid: 95154661354830540acb25d5785c46be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059682226430716224, guid: 95154661354830540acb25d5785c46be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059682226430716224, guid: 95154661354830540acb25d5785c46be, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059682226430716224, guid: 95154661354830540acb25d5785c46be, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059682226430716224, guid: 95154661354830540acb25d5785c46be, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059682226430716224, guid: 95154661354830540acb25d5785c46be, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059682226430716224, guid: 95154661354830540acb25d5785c46be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059682226430716224, guid: 95154661354830540acb25d5785c46be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059682226430716224, guid: 95154661354830540acb25d5785c46be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059682226430716238, guid: 95154661354830540acb25d5785c46be, type: 3}
+      propertyPath: m_Name
+      value: SceneManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 95154661354830540acb25d5785c46be, type: 3}
 --- !u!1 &1133030148
 GameObject:
   m_ObjectHideFlags: 0
@@ -6040,6 +6101,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1482125904
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8440069676373283204, guid: ed382b4936147bd42845b24fb354e32c, type: 3}
+      propertyPath: m_Name
+      value: ResetCoins
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440069676373283226, guid: ed382b4936147bd42845b24fb354e32c, type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440069676373283226, guid: ed382b4936147bd42845b24fb354e32c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440069676373283226, guid: ed382b4936147bd42845b24fb354e32c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440069676373283226, guid: ed382b4936147bd42845b24fb354e32c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440069676373283226, guid: ed382b4936147bd42845b24fb354e32c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440069676373283226, guid: ed382b4936147bd42845b24fb354e32c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440069676373283226, guid: ed382b4936147bd42845b24fb354e32c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440069676373283226, guid: ed382b4936147bd42845b24fb354e32c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440069676373283226, guid: ed382b4936147bd42845b24fb354e32c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440069676373283226, guid: ed382b4936147bd42845b24fb354e32c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440069676373283226, guid: ed382b4936147bd42845b24fb354e32c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed382b4936147bd42845b24fb354e32c, type: 3}
 --- !u!1 &1511632126
 GameObject:
   m_ObjectHideFlags: 0
@@ -8134,7 +8256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4472410423864527485, guid: f77a1cf38d1eef047b724ce8ed56144c, type: 3}
       propertyPath: m_Name
-      value: Small Coin
+      value: Small Coin (0)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

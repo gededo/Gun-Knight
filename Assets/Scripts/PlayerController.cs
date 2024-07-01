@@ -291,7 +291,7 @@ public class PlayerController : MonoBehaviour
     public void GetCoin(int coinValue)
     {
         coinScore += coinValue;
-        PlayerPrefs.SetInt("wallet", PlayerPrefs.GetInt("wallet") +1);
+        PlayerPrefs.SetInt("wallet", PlayerPrefs.GetInt("wallet") +coinValue);
         UpdateScoreText();
     }
 
