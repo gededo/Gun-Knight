@@ -410,35 +410,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c183404b3f57e240812fcec6f100562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 15
   currentHealth: 0
-  speed: 2
-  groundDetection: {fileID: 7307140593975235181}
-  wallDetection: {fileID: 62431427}
-  player: {fileID: 0}
-  detectionRange: 10
   fovAngle: 45
+  moveDirection: 1
+  resetAttackCooldown: 1
+  isDead: 0
+  attackFrame: 1
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  chaseDuration: 15
-  damageAmount: 1
-  damageInterval: 1
-  capsuleHeight: 2
-  moveDirection: 1
-  stoppingDistance: 8.5
-  retreatDistance: 5
+  groundDetection: {fileID: 7307140593975235181}
+  wallDetection: {fileID: 62431427}
+  player: {fileID: 0}
   capsuleCollider: {fileID: 0}
-  resetAttackCooldown: 1
-  isDead: 0
   playerScript: {fileID: 0}
-  attackFrame: 1
+  detectionRange: 8
+  thiefMaxHealth: 9
+  thiefSpeed: 2
+  thiefDamageInterval: 1
+  thiefCapsuleHeight: 2
+  thiefStoppingDistance: 7
+  thiefRetreatDistance: 5
+  thiefChaseDuration: 1
   damageAmountKnife: 4
   damageAmountArrow: 3
-  thiefHealth: 9
   startFacingRight: 1
   Bow: {fileID: 2652938643533640717}
   Arrow: {fileID: 995745942634551303, guid: 912eb0aa71a3692498527030f6a87556, type: 3}

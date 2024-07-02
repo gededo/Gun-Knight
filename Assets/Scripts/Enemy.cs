@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public float currentHealth;
     public float fovAngle = 45f;
     public float moveDirection = 1f;
+    public float detectionRange = 5f;
     public bool resetAttackCooldown = true;
     public bool isDead = false;
     public bool attackFrame = false;
@@ -23,7 +24,6 @@ public class Enemy : MonoBehaviour
     protected float speed = 2f;
     protected float damageAmount = 1f;
     protected float damageInterval = 1f;
-    protected float detectionRange = 5f;
     protected float capsuleHeight = 2f;
     protected float stoppingDistance = 0.5f;
     protected float retreatDistance = 5f;
