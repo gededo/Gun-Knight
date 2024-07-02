@@ -72,3 +72,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Assets/Scripts/FullscreenGameView.cs
 Assets/Scripts/FullscreenGameView.cs.meta
+Assets/Scenes/fase1.unity
