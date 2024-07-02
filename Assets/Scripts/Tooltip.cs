@@ -17,6 +17,7 @@ public class Tooltip : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        Debug.Log("hoveredOver");
         TooltipManager._instance.powerupEffect = powerupEffect;
         TooltipManager._instance.selected = this;
         TooltipManager._instance.SetAndShowToolTip(message);
