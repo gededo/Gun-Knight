@@ -11,5 +11,7 @@ public class HealthBoost : PowerupEffect
     {
         target.GetComponent<PlayerController>().maxHealth = amount;
         target.GetComponent<PlayerController>().currentHealth = amount;
+        target.GetComponent<PlayerController>().healthSlider.maxValue = amount;
+        target.GetComponent<PlayerController>().SetHealthSlider(amount);
     }
 }
