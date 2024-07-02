@@ -12,10 +12,11 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 12f;
     public float damageMultiplier = 1f;
     public float fireRateMultiplier = 1f;
-    public float maxShields = 0f;
-    public float shields = 0f;
     public float invulnerabilityDuration = 1.5f;
     public float shieldRegenTime = 45f;
+
+    public int maxShields = 0;
+    public int shields = 0;
 
     public int coinScore;
     public Slider healthSlider;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject bulletPrefab;
     public GameObject Gun, Gun2, Gun3, activeGun;
+    public ShieldHud shieldScript;
     public Coroutine shieldRegenCoroutine;
     public Transform GunTip;
     public Text scoreTxt;
@@ -92,6 +94,7 @@ public class PlayerController : MonoBehaviour
         activeGun = Gun;
         coinScore = PlayerPrefs.GetInt("wallet");
         scoreTxt.text = coinScore.ToString();
+        shieldScript.UpdateShieldDisplay(shields);
 
         /*if (mainCamera)
         {
@@ -285,6 +288,7 @@ public class PlayerController : MonoBehaviour
         if(shields < maxShields)
         {
             shields++;
+            shieldScript.UpdateShieldDisplay(shields);
         }
         shieldRegenCoroutine = null;
     }
@@ -320,6 +324,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 shields--;
+                shieldScript.UpdateShieldDisplay(shields);
             }
             //Debug.Log("Player took damage: " + damage + ". Current health: " + currentHealth);
         }
