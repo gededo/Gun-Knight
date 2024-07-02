@@ -27,9 +27,11 @@ public class PlayerController : MonoBehaviour
     public bool canPistolShoot = true;
     public float pistolCooldownTime;
 
+    public bool boughtRifle = false;
     public bool canRifleShoot = true;
     public float rifleCooldownTime;
 
+    public bool boughtShotgun = false;
     public bool canShotgunShoot = true;
     public float shotgunCooldownTime;
 
@@ -75,7 +77,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void SwitchGuns(GameObject selectedGun)
+    public void SwitchGuns(GameObject selectedGun)
     {
         activeGun.SetActive(false);
         activeGun = selectedGun;
@@ -118,11 +120,11 @@ public class PlayerController : MonoBehaviour
             isRifleShooting = false;
             SwitchGuns(Gun);
         }
-        if (Input.GetKey(KeyCode.Alpha2) && !Gun2.activeInHierarchy)
+        if (Input.GetKey(KeyCode.Alpha2) && !Gun2.activeInHierarchy && boughtRifle)
         {
             SwitchGuns(Gun2);
         }
-        if (Input.GetKey(KeyCode.Alpha3) && !Gun3.activeInHierarchy)
+        if (Input.GetKey(KeyCode.Alpha3) && !Gun3.activeInHierarchy && boughtShotgun)
         {
             isRifleShooting = false;
             SwitchGuns(Gun3);
