@@ -110,9 +110,9 @@ TextureImporter:
       name: Canine_Gray_Full_FX_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 4
         y: 128
-        width: 44
+        width: 34
         height: 23
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -131,9 +131,9 @@ TextureImporter:
       name: Canine_Gray_Full_FX_1
       rect:
         serializedVersion: 2
-        x: 50
+        x: 52
         y: 128
-        width: 43
+        width: 33
         height: 22
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -152,10 +152,10 @@ TextureImporter:
       name: Canine_Gray_Full_FX_2
       rect:
         serializedVersion: 2
-        x: 105
+        x: 101
         y: 128
-        width: 34
-        height: 23
+        width: 33
+        height: 22
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,10 +173,10 @@ TextureImporter:
       name: Canine_Gray_Full_FX_3
       rect:
         serializedVersion: 2
-        x: 154
+        x: 149
         y: 128
-        width: 33
-        height: 22
+        width: 34
+        height: 23
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,9 +194,9 @@ TextureImporter:
       name: Canine_Gray_Full_FX_4
       rect:
         serializedVersion: 2
-        x: 203
+        x: 195
         y: 128
-        width: 33
+        width: 43
         height: 22
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -215,9 +215,9 @@ TextureImporter:
       name: Canine_Gray_Full_FX_5
       rect:
         serializedVersion: 2
-        x: 250
+        x: 243
         y: 128
-        width: 34
+        width: 44
         height: 23
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -236,9 +236,9 @@ TextureImporter:
       name: Canine_Gray_Full_FX_6
       rect:
         serializedVersion: 2
-        x: 3
-        y: 96
-        width: 41
+        x: 4
+        y: 101
+        width: 42
         height: 21
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -257,10 +257,10 @@ TextureImporter:
       name: Canine_Gray_Full_FX_7
       rect:
         serializedVersion: 2
-        x: 53
-        y: 96
-        width: 40
-        height: 19
+        x: 52
+        y: 97
+        width: 41
+        height: 20
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,9 +278,9 @@ TextureImporter:
       name: Canine_Gray_Full_FX_8
       rect:
         serializedVersion: 2
-        x: 100
+        x: 99
         y: 96
-        width: 41
+        width: 43
         height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -299,9 +299,9 @@ TextureImporter:
       name: Canine_Gray_Full_FX_9
       rect:
         serializedVersion: 2
-        x: 146
+        x: 147
         y: 96
-        width: 43
+        width: 41
         height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -321,9 +321,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 195
-        y: 97
-        width: 41
-        height: 20
+        y: 96
+        width: 40
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -341,9 +341,9 @@ TextureImporter:
       name: Canine_Gray_Full_FX_11
       rect:
         serializedVersion: 2
-        x: 242
-        y: 101
-        width: 42
+        x: 244
+        y: 96
+        width: 41
         height: 21
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -362,10 +362,10 @@ TextureImporter:
       name: Canine_Gray_Full_FX_12
       rect:
         serializedVersion: 2
-        x: 4
+        x: 5
         y: 64
-        width: 40
-        height: 23
+        width: 43
+        height: 22
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,9 +384,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 52
-        y: 65
-        width: 41
-        height: 20
+        y: 64
+        width: 44
+        height: 23
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -404,10 +404,10 @@ TextureImporter:
       name: Canine_Gray_Full_FX_14
       rect:
         serializedVersion: 2
-        x: 98
-        y: 66
-        width: 43
-        height: 20
+        x: 99
+        y: 64
+        width: 44
+        height: 22
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,10 +425,10 @@ TextureImporter:
       name: Canine_Gray_Full_FX_15
       rect:
         serializedVersion: 2
-        x: 145
-        y: 64
-        width: 44
-        height: 22
+        x: 147
+        y: 66
+        width: 43
+        height: 20
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -446,10 +446,10 @@ TextureImporter:
       name: Canine_Gray_Full_FX_16
       rect:
         serializedVersion: 2
-        x: 192
-        y: 64
-        width: 44
-        height: 23
+        x: 195
+        y: 65
+        width: 41
+        height: 20
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -467,10 +467,10 @@ TextureImporter:
       name: Canine_Gray_Full_FX_17
       rect:
         serializedVersion: 2
-        x: 240
+        x: 244
         y: 64
-        width: 43
-        height: 22
+        width: 40
+        height: 23
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -488,10 +488,10 @@ TextureImporter:
       name: Canine_Gray_Full_FX_18
       rect:
         serializedVersion: 2
-        x: 2
+        x: 4
         y: 32
-        width: 42
-        height: 15
+        width: 39
+        height: 20
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -509,7 +509,7 @@ TextureImporter:
       name: Canine_Gray_Full_FX_19
       rect:
         serializedVersion: 2
-        x: 53
+        x: 52
         y: 32
         width: 39
         height: 20
@@ -530,10 +530,10 @@ TextureImporter:
       name: Canine_Gray_Full_FX_20
       rect:
         serializedVersion: 2
-        x: 100
+        x: 101
         y: 32
-        width: 40
-        height: 23
+        width: 32
+        height: 21
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -551,10 +551,10 @@ TextureImporter:
       name: Canine_Gray_Full_FX_21
       rect:
         serializedVersion: 2
-        x: 155
+        x: 148
         y: 32
-        width: 32
-        height: 21
+        width: 40
+        height: 23
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -572,7 +572,7 @@ TextureImporter:
       name: Canine_Gray_Full_FX_22
       rect:
         serializedVersion: 2
-        x: 197
+        x: 196
         y: 32
         width: 39
         height: 20
@@ -593,10 +593,10 @@ TextureImporter:
       name: Canine_Gray_Full_FX_23
       rect:
         serializedVersion: 2
-        x: 245
+        x: 244
         y: 32
-        width: 39
-        height: 20
+        width: 42
+        height: 15
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -614,10 +614,10 @@ TextureImporter:
       name: Canine_Gray_Full_FX_24
       rect:
         serializedVersion: 2
-        x: 48
+        x: 5
         y: 0
-        width: 43
-        height: 8
+        width: 42
+        height: 13
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -635,10 +635,10 @@ TextureImporter:
       name: Canine_Gray_Full_FX_25
       rect:
         serializedVersion: 2
-        x: 96
+        x: 53
         y: 0
         width: 43
-        height: 8
+        height: 9
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -656,7 +656,7 @@ TextureImporter:
       name: Canine_Gray_Full_FX_26
       rect:
         serializedVersion: 2
-        x: 144
+        x: 101
         y: 0
         width: 43
         height: 8
@@ -677,10 +677,10 @@ TextureImporter:
       name: Canine_Gray_Full_FX_27
       rect:
         serializedVersion: 2
-        x: 192
+        x: 149
         y: 0
         width: 43
-        height: 9
+        height: 8
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -698,10 +698,10 @@ TextureImporter:
       name: Canine_Gray_Full_FX_28
       rect:
         serializedVersion: 2
-        x: 241
+        x: 197
         y: 0
-        width: 42
-        height: 13
+        width: 43
+        height: 8
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

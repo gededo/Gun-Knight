@@ -74,9 +74,9 @@ GameObject:
   - component: {fileID: 5912415514490590093}
   - component: {fileID: 5912415514490590192}
   - component: {fileID: 5912415514490590095}
+  - component: {fileID: 5912415514490590194}
+  - component: {fileID: 5912415514490590196}
   - component: {fileID: 5912415514490590195}
-  - component: {fileID: 995354253878482458}
-  - component: {fileID: 3072702995224290331}
   m_Layer: 8
   m_Name: Lobo
   m_TagString: Enemy
@@ -93,13 +93,13 @@ Transform:
   m_GameObject: {fileID: 5912415514490590092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 110.67356, y: -3.2344828, z: 0}
-  m_LocalScale: {x: 0.84974, y: 0.84974, z: 0.84974}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5912415514149657511}
   - {fileID: 2046220288349550097}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5912415514490590093
 SpriteRenderer:
@@ -142,7 +142,7 @@ SpriteRenderer:
   m_SortingLayerID: 1802687089
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1389874071, guid: e95a1cd3ca5d6f3469c11b9616a9ecdd, type: 3}
+  m_Sprite: {fileID: 564702936, guid: a6df4f9d1ea98984f9213380098cbbd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -185,18 +185,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0044846535, y: 0.9}
+  m_Offset: {x: -0.0044846535, y: 0.6565325}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 3.3846154, y: 1.7692307}
+    oldSize: {x: 1.0769231, y: 1.3076923}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 1.8}
+  m_Size: {x: 0.8098879, y: 1.313065}
   m_EdgeRadius: 0
 --- !u!50 &5912415514490590095
 Rigidbody2D:
@@ -225,6 +225,63 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!95 &5912415514490590194
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5912415514490590092}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d83a34acb72b19941bc0d9484f793754, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &5912415514490590196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5912415514490590092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af26b5ba37d1b6848978e40f3b3cc5d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  fovAngle: 45
+  moveDirection: 1
+  resetAttackCooldown: 1
+  isDead: 0
+  attackFrame: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  groundDetection: {fileID: 5912415514149657511}
+  wallDetection: {fileID: 2046220288349550097}
+  player: {fileID: 0}
+  capsuleCollider: {fileID: 0}
+  playerScript: {fileID: 0}
+  redKnightMaxHealth: 12
+  redKnightSpeed: 2.5
+  redKnightDamage: 10
+  redKnightDamageInterval: 1
+  redKnightCapsuleHeight: 2
+  redKnightStoppingDistance: 0.5
+  redKnightChaseDuration: 3.5
+  startFacingRight: 1
 --- !u!70 &5912415514490590195
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -257,64 +314,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1, y: 1}
-  m_Size: {x: 1.7, y: 1.2}
+  m_Offset: {x: 0.029287934, y: 0.72}
+  m_Size: {x: 1.5, y: 1.2}
   m_Direction: 0
---- !u!95 &995354253878482458
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5912415514490590092}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e1fa792441010ca4e9c0942baeb8d20c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
---- !u!114 &3072702995224290331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5912415514490590092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d2acc8312ccd2d4ba57fc59c42a22c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 0
-  fovAngle: 45
-  moveDirection: 1
-  detectionRange: 5
-  resetAttackCooldown: 1
-  isDead: 0
-  attackFrame: 0
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  groundDetection: {fileID: 0}
-  wallDetection: {fileID: 0}
-  player: {fileID: 0}
-  capsuleCollider: {fileID: 0}
-  playerScript: {fileID: 0}
-  LoboMaxHealth: 12
-  LoboSpeed: 2.5
-  LoboDamage: 10
-  LoboDamageInterval: 1
-  LoboCapsuleHeight: 2
-  LoboStoppingDistance: 0.5
-  LoboChaseDuration: 3.5
-  startFacingRight: 1
