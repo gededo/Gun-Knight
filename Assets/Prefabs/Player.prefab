@@ -212,11 +212,12 @@ MonoBehaviour:
   jumpHeight: 16
   damageMultiplier: 1
   fireRateMultiplier: 1
-  maxShields: 0
-  shields: 0
   invulnerabilityDuration: 0.5
   shieldRegenTime: 45
+  maxShields: 0
+  shields: 0
   coinScore: 0
+  healthSlider: {fileID: 0}
   isDead: 0
   isInvulnerable: 0
   canPistolShoot: 1
@@ -233,6 +234,7 @@ MonoBehaviour:
   Gun2: {fileID: 6461931891210295256}
   Gun3: {fileID: 6461931890987488301}
   activeGun: {fileID: 6461931890504069970}
+  shieldScript: {fileID: 0}
   GunTip: {fileID: 6461931890507816096}
   scoreTxt: {fileID: 0}
 --- !u!95 &6461931890444293464
@@ -482,7 +484,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
   m_SortingLayer: 5
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1418744057, guid: e8d4a696d46da994483ef49263ac3d5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
