@@ -13,6 +13,7 @@ public class ResetOnStart : MonoBehaviour
         Instance = this;
 
         PlayerPrefs.SetString("coins", "");
+        PlayerPrefs.SetString("equippedpowerups", "");
         PlayerPrefs.SetInt("wallet", 0);
     }
 }

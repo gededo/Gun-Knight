@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2fe2d7fc9e1bf4e88acc0fce732dd9, type: 3}
   m_Name: Shield Powerup
   m_EditorClassIdentifier: 
+  price: 10
   amount: 3

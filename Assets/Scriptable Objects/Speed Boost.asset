@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563a1419b19bfe7449830e05d89f2ebb, type: 3}
   m_Name: Speed Boost
   m_EditorClassIdentifier: 
+  price: 2
   amount: 7

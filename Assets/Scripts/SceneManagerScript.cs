@@ -12,6 +12,7 @@ public class SceneManagerScript : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             //SceneManager.LoadScene("fase3");
             //PlayerPrefs.SetString("coins", "");
+            //PlayerPrefs.SetString("equippedpowerups", "");
             //PlayerPrefs.SetInt("wallet", 0);
         }
         if (Input.GetKeyDown(KeyCode.H))

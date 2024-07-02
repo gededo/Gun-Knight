@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a89001be08ae94996242e49d17a87c, type: 3}
   m_Name: Damage Boost
   m_EditorClassIdentifier: 
+  price: 3
   amount: 1.5

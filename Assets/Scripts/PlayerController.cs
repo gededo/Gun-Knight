@@ -300,7 +300,7 @@ public class PlayerController : MonoBehaviour
         UpdateScoreText();
     }
 
-    private void UpdateScoreText()
+    public void UpdateScoreText()
     {
         scoreTxt.text = coinScore.ToString();
     }
