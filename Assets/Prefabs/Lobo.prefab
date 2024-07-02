@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046220288349550098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.472, y: 0.485, z: 0}
+  m_LocalPosition: {x: 1.6, y: 0.485, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -91,8 +91,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5912415514490590092}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 110.67356, y: -3.2344828, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 169.07, y: -2.064, z: -0.0023288727}
   m_LocalScale: {x: 0.84974, y: 0.84974, z: 0.84974}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -295,26 +295,27 @@ MonoBehaviour:
   currentHealth: 0
   fovAngle: 45
   moveDirection: 1
-  detectionRange: 5
+  detectionRange: 15
   resetAttackCooldown: 1
   isDead: 0
   attackFrame: 0
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
-  groundDetection: {fileID: 0}
-  wallDetection: {fileID: 0}
+    m_Bits: 64
+  groundDetection: {fileID: 5912415514149657511}
+  wallDetection: {fileID: 2046220288349550097}
   player: {fileID: 0}
   capsuleCollider: {fileID: 0}
   playerScript: {fileID: 0}
   LoboMaxHealth: 12
-  LoboSpeed: 2.5
+  LoboSpeed: 7
   LoboDamage: 10
   LoboDamageInterval: 1
   LoboCapsuleHeight: 2
-  LoboStoppingDistance: 0.5
-  LoboChaseDuration: 3.5
+  LoboStoppingDistance: 1.5
+  LoboChaseDuration: 7
   startFacingRight: 1
+  canMove: 0
