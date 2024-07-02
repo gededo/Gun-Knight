@@ -49,6 +49,22 @@ public class TooltipManager : MonoBehaviour
             HideTooltip();
             playerScript.coinScore -= powerupEffect.price;
             PlayerPrefs.SetInt("wallet", PlayerPrefs.GetInt("wallet") - powerupEffect.price);
+            if (selected.rifleTooltip != null && selected.shotgunTooltip != null)
+            {
+                if (selected.isRifle && !selected.shotgunTooltip.GetComponentInChildren<Tooltip>().hasBought)
+                {
+                    selected.shotgunTooltip.
+                        GetComponentInChildren<Tooltip>().a = PlayerPrefs.GetString("equippedpowerups").Contains(selected.shotgunTooltip.gameObject.name);
+                    if (!selected.shotgunTooltip.GetComponentInChildren<Tooltip>().a)
+                    {
+                        selected.shotgunTooltip.SetActive(true);
+                    }
+                }
+                else if (!selected.isRifle && !selected.rifleTooltip.GetComponentInChildren<Tooltip>().hasBought)
+                {
+                    selected.rifleTooltip.SetActive(true);
+                }
+            }
             powerupEffect = null;
             selected = null;
             player = null;

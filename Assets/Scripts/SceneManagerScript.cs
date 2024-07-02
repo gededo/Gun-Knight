@@ -22,6 +22,7 @@ public class SceneManagerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.U))
         {
             PlayerPrefs.SetString("coins", "");
+            PlayerPrefs.SetString("equippedpowerups", "");
             PlayerPrefs.SetInt("wallet", 0);
         }
     }
