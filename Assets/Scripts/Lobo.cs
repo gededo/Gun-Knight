@@ -12,7 +12,7 @@ public class Lobo : Enemy
     public float LoboStoppingDistance = 0.5f;
     public float LoboChaseDuration = 3.5f;
     public bool startFacingRight = true;
-    public bool canMove = true;
+    private bool isAttacking = false;
 
 
     void Start()
@@ -64,12 +64,12 @@ public class Lobo : Enemy
     {
         if (!isDead && !playerScript.isDead)
         {
-            if (!isChasing)
+            if (!isChasing && !isAttacking) // Prevent movement while attacking
             {
                 Patrol();
                 CheckForPlayer();
             }
-            else
+            else if (isChasing && !isAttacking) // Prevent movement while attacking
             {
                 FollowPlayer();
             }
@@ -78,5 +78,16 @@ public class Lobo : Enemy
         {
             anim.SetBool("isIdle", true);
         }
+    }
+
+    public void StopMovement()
+    {
+        isAttacking = true;
+        rb.velocity = Vector2.zero; // Stop the Rigidbody2D movement
+    }
+
+    public void ResumeMovement()
+    {
+        isAttacking = false;
     }
 }
