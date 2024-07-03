@@ -68,7 +68,7 @@ Transform:
   - {fileID: 6461931891210295259}
   - {fileID: 6461931890987488300}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6461931890444293478
 SpriteRenderer:
@@ -222,8 +222,10 @@ MonoBehaviour:
   isInvulnerable: 0
   canPistolShoot: 1
   pistolCooldownTime: 30
+  boughtRifle: 0
   canRifleShoot: 1
   rifleCooldownTime: 20
+  boughtShotgun: 0
   canShotgunShoot: 1
   shotgunCooldownTime: 80
   groundLayer:
