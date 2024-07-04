@@ -255,6 +255,8 @@ MonoBehaviour:
   pistolSoundClip: {fileID: 8300000, guid: 35db8df313ac93f4c865699a51a58ac5, type: 3}
   rifleSoundClip: {fileID: 8300000, guid: b0669792a6696cc48a855b19ccc6058e, type: 3}
   shotgunSoundClip: {fileID: 8300000, guid: 7cc0cb63b918575498db703a1e0497d9, type: 3}
+  coinSoundClip: {fileID: 8300000, guid: 88d7db5a7c41d214b86c4275248233a6, type: 3}
+  shieldBreakSoundClip: {fileID: 8300000, guid: 600a8a5b86a94924aab2c78d327c6d1b, type: 3}
 --- !u!95 &6461931890444293464
 Animator:
   serializedVersion: 5
