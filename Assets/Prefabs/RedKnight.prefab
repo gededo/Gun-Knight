@@ -140,7 +140,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1802687089
-  m_SortingLayer: 4
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 564702936, guid: a6df4f9d1ea98984f9213380098cbbd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -257,33 +257,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af26b5ba37d1b6848978e40f3b3cc5d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 12
   currentHealth: 0
-  speed: 2
-  groundDetection: {fileID: 5649972539917553076}
-  wallDetection: {fileID: 1717362690}
-  player: {fileID: 0}
-  detectionRange: 5
   fovAngle: 45
+  moveDirection: 1
+  detectionRange: 5
+  resetAttackCooldown: 1
+  isDead: 0
+  attackFrame: 0
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  chaseDuration: 3.5
-  damageAmount: 1
-  damageInterval: 1
-  capsuleHeight: 2
-  moveDirection: 1
-  stoppingDistance: 1
-  retreatDistance: 5
+  groundDetection: {fileID: 5649972539917553076}
+  wallDetection: {fileID: 1717362690}
+  player: {fileID: 0}
   capsuleCollider: {fileID: 0}
-  resetAttackCooldown: 1
-  isDead: 0
   playerScript: {fileID: 0}
-  attackFrame: 0
-  redKnightHealth: 12
+  redKnightMaxHealth: 12
+  redKnightSpeed: 2.5
+  redKnightDamage: 10
+  redKnightDamageInterval: 1
+  redKnightCapsuleHeight: 2
+  redKnightStoppingDistance: 0.5
+  redKnightChaseDuration: 3.5
   startFacingRight: 1
 --- !u!70 &5649972541194831328
 CapsuleCollider2D:
