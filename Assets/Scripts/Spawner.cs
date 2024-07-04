@@ -6,6 +6,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject shotgunPUp;
+    public GameObject riflePUp;
     bool d = false;
 
     void Start()
@@ -13,19 +14,7 @@ public class Spawner : MonoBehaviour
         bool a = PlayerPrefs.GetString("coins").Contains(gameObject.name);
         bool b = PlayerPrefs.GetString("equippedpowerups").Contains(gameObject.name);
 
-        bool c()
-        {
-            if (gameObject.name == "Rifle PUp")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        if (shotgunPUp != null)
+        if (gameObject.name == "Rifle PUp")
         {
             d = PlayerPrefs.GetString("equippedpowerups").Contains(shotgunPUp.transform.parent.gameObject.name);
         }
@@ -45,7 +34,7 @@ public class Spawner : MonoBehaviour
             TooltipManager._instance.player = null;
             gameObject.SetActive(false);
         }
-        if ((c()) && d && (shotgunPUp != null))
+        if (gameObject.name == "Rifle PUp" && d && (shotgunPUp != null))
         {
             GameObject player = GameObject.Find("Player");
             Tooltip shotgunPUpScript = shotgunPUp.GetComponent<Tooltip>();

@@ -79,7 +79,7 @@ public class Enemy : MonoBehaviour
     {
         rb.velocity = new Vector2((moveDirection) * speed, rb.velocity.y);
 
-        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 1f, groundLayer);
+        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 0.5f, groundLayer);
         if (groundInfo.collider == false)
         {
             if (movingRight)

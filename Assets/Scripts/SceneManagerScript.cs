@@ -17,7 +17,7 @@ public class SceneManagerScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.H))
         {
-            Debug.Log(PlayerPrefs.GetString("coins"));
+            Debug.Log(PlayerPrefs.GetString("equippedpowerups"));
         }
         if (Input.GetKeyDown(KeyCode.U))
         {

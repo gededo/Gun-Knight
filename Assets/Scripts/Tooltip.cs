@@ -25,12 +25,12 @@ public class Tooltip : MonoBehaviour
                 isRifle = true;
                 if (a)
                 {
-                    rifleTooltip.SetActive(false);
                     shotgunTooltip.SetActive(true);
                 }
             }
             else if (gameObject.transform.parent.name == shotgunTooltip.name)
             {
+                bool b = PlayerPrefs.GetString("equippedpowerups").Contains("Rifle PUp");
                 isRifle = false;
                 if (a)
                 {

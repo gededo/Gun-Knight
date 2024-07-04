@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
     public Text scoreTxt;
     //public Camera mainCamera;
 
-    bool isGrounded;
+    public bool isGrounded;
     bool facingRight = true;
     bool isColliding;
     bool isRifleShooting = false;

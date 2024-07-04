@@ -62,7 +62,11 @@ public class TooltipManager : MonoBehaviour
                 }
                 else if (!selected.isRifle && !selected.rifleTooltip.GetComponentInChildren<Tooltip>().hasBought)
                 {
-                    selected.rifleTooltip.SetActive(true);
+                    bool rifleBought = PlayerPrefs.GetString("equippedpowerups").Contains("Rifle PUp");
+                    if (!rifleBought) 
+                    {
+                        selected.rifleTooltip.SetActive(true);
+                    }
                 }
             }
             powerupEffect = null;
@@ -94,7 +98,7 @@ public class TooltipManager : MonoBehaviour
     {
         if (powerupEffect != null && player != null)
         {
-            Debug.Log("Powerup Applied!");
+            //Debug.Log("Powerup Applied!");
             powerupEffect.Apply(player);
         }
     }

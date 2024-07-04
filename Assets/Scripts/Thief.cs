@@ -114,7 +114,7 @@ public class Thief : Enemy
             else if ((distance.x * moveDirection) < stoppingDistance && (distance.x * moveDirection) < retreatDistance)
             {
 
-                RaycastHit2D groundInfoBack = Physics2D.Raycast(groundDetectionBack.position, Vector2.down, 1f, groundLayer);
+                RaycastHit2D groundInfoBack = Physics2D.Raycast(groundDetectionBack.position, Vector2.down, 0.5f, groundLayer);
                 if (groundInfoBack.collider == true)
                 {
                     anim.SetBool("isIdle", false);
@@ -141,7 +141,7 @@ public class Thief : Enemy
                 Flip();
             }
 
-            RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 1f, groundLayer);
+            RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 0.5f, groundLayer);
             if (groundInfo.collider == false)
             {
                 anim.SetBool("isIdle", true);

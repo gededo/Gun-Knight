@@ -11,7 +11,7 @@ public class CameraTrigger : MonoBehaviour
     public Transform targetTransform;
 
     bool hasTriggered = false;
-    CameraFollow cameraScript;
+    public CameraFollow cameraScript;
     PlayerController playerScript;
 
     void Start()
@@ -31,13 +31,12 @@ public class CameraTrigger : MonoBehaviour
             if(playerScript.isDead == false)
             {
                 hasTriggered = true;
-                Debug.Log("hasTriggered");
                 StartCoroutine(changeTarget(cameraScript.target, targetTransform, holdTime));
             }
         }
     }
 
-    IEnumerator changeTarget(Transform oldTarget, Transform targetTransform, float holdTime)
+    public IEnumerator changeTarget(Transform oldTarget, Transform targetTransform, float holdTime)
     {
         float oldSpeed = playerScript.speed;
 
