@@ -36,6 +36,8 @@ public class Enemy : MonoBehaviour
     protected Animator anim;
     protected Coroutine stopDamage;
 
+    [SerializeField] private AudioClip damageSoundClip;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -301,9 +303,10 @@ public class Enemy : MonoBehaviour
         {
             currentHealth -= damage;
             anim.SetBool("gettingHurt", true);
+            SoundFXManager.instance.PlaySoundFXCLip(damageSoundClip, transform, 0.7f);
             isChasing = true;
             FollowPlayer();
-            Debug.Log("Enemy took damage: " + damage + ". Current health: " + currentHealth);
+            //Debug.Log("Enemy took damage: " + damage + ". Current health: " + currentHealth);
         }
     }
 

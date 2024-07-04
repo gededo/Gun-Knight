@@ -5,6 +5,9 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
 
+    [SerializeField] private GameObject painelopcoes;
+    [SerializeField] private GameObject mainPausePanel;
+
     private bool isPaused = false;
 
     void Update()
@@ -25,6 +28,8 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        mainPausePanel.SetActive(true);
+        painelopcoes.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
     }
@@ -36,6 +41,17 @@ public class PauseMenu : MonoBehaviour
         isPaused = true;
     }
 
+    public void Optionsmenu()
+    {
+        painelopcoes.SetActive(true);
+        mainPausePanel.SetActive(false);
+    }
+
+    public void Closeoptionsmenu()
+    {
+        mainPausePanel.SetActive(true);
+        painelopcoes.SetActive(false);
+    }
 
     public void ExitToMainMenu()
     {

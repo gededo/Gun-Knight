@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4544349313068801591}
   - component: {fileID: 4544349313068801589}
   - component: {fileID: 4544349313068801737}
+  - component: {fileID: 1601317753}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -109,5 +110,21 @@ MonoBehaviour:
   smoothTime: 0.25
   minY: -10
   maxY: 0.5
+  canControl: 1
   target: {fileID: 0}
   offset: {x: 0, y: 4, z: -10}
+--- !u!114 &1601317753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4544349313068801588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e06c474830260f4eb0b0ff90369be73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 0}
+  painelopcoes: {fileID: 0}
+  mainPausePanel: {fileID: 0}

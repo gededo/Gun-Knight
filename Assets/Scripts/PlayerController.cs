@@ -51,6 +51,12 @@ public class PlayerController : MonoBehaviour
     bool isColliding;
     bool isRifleShooting = false;
 
+    [SerializeField] private AudioClip jumpSoundClip;
+    [SerializeField] private AudioClip damageSoundClip;
+    [SerializeField] private AudioClip pistolSoundClip;
+    [SerializeField] private AudioClip rifleSoundClip;
+    [SerializeField] private AudioClip shotgunSoundClip;
+
     float moveDirection = 0;
 
     Vector3 cameraPos;
@@ -154,6 +160,7 @@ public class PlayerController : MonoBehaviour
                 GunAnim.SetTrigger("IsShooting");
                 Pistol pistolScript = activeGun.GetComponent<Pistol>();
                 GameObject bullet = (GameObject)Instantiate(bulletPrefab, GunTip.position, transform.rotation);
+                SoundFXManager.instance.PlaySoundFXCLip(pistolSoundClip, transform, 0.1f);
                 Bullet bulletScript = bullet.GetComponent<Bullet>();
                 bulletScript.playerBulletDamage = pistolScript.GunDamage * damageMultiplier;
                 if (facingRight)
@@ -175,6 +182,7 @@ public class PlayerController : MonoBehaviour
             {
                 Shotgun shotgunScript = activeGun.GetComponent<Shotgun>();
                 shotgunScript.Shoot(facingRight, damageMultiplier);
+                SoundFXManager.instance.PlaySoundFXCLip(shotgunSoundClip, transform, 0.1f);
                 StartCoroutine(shotgunCooldown());
             }
         }
@@ -201,6 +209,7 @@ public class PlayerController : MonoBehaviour
         // Jumping
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && isGrounded && !isDead)
         {
+            SoundFXManager.instance.PlaySoundFXCLip(jumpSoundClip, transform, 0.5f);
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
             anim.SetBool("isJumping", true);
         }
@@ -211,6 +220,7 @@ public class PlayerController : MonoBehaviour
             GunAnim.SetTrigger("IsShooting");
             Guns gunScript = activeGun.GetComponent<Guns>();
             GameObject bullet = (GameObject)Instantiate(bulletPrefab, GunTip.position, transform.rotation);
+            SoundFXManager.instance.PlaySoundFXCLip(rifleSoundClip, transform, 0.2f);
             Bullet bulletScript = bullet.GetComponent<Bullet>();
             bulletScript.playerBulletDamage = gunScript.GunDamage * damageMultiplier;
             if (facingRight)
@@ -322,6 +332,7 @@ public class PlayerController : MonoBehaviour
             anim.Play("PlayerHurt");
             if(shields <= 0)
             {
+                SoundFXManager.instance.PlaySoundFXCLip(damageSoundClip, transform, 0.8f);
                 currentHealth -= damage;
                 SetHealthSlider(currentHealth);
             }

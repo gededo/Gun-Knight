@@ -275,6 +275,7 @@ MonoBehaviour:
   player: {fileID: 0}
   capsuleCollider: {fileID: 0}
   playerScript: {fileID: 0}
+  damageSoundClip: {fileID: 8300000, guid: db8d9f2927d4696428cd6f84d816716a, type: 3}
   redKnightMaxHealth: 12
   redKnightSpeed: 2.5
   redKnightDamage: 10
