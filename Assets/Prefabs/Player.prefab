@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6461931890444293465}
   - component: {fileID: 6461931890444293478}
+  - component: {fileID: 1132993602}
   - component: {fileID: 6461931890444293479}
   - component: {fileID: 6461931890444293476}
   - component: {fileID: 6461931890444293477}
@@ -68,7 +69,7 @@ Transform:
   - {fileID: 6461931891210295259}
   - {fileID: 6461931890987488300}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6461931890444293478
 SpriteRenderer:
@@ -109,7 +110,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 5
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -75679465, guid: fbe4a3429c2b09a45894fa6520d712db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -122,6 +123,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!81 &1132993602
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6461931890444293474}
+  m_Enabled: 1
 --- !u!50 &6461931890444293479
 Rigidbody2D:
   serializedVersion: 4
@@ -236,9 +245,16 @@ MonoBehaviour:
   Gun2: {fileID: 6461931891210295256}
   Gun3: {fileID: 6461931890987488301}
   activeGun: {fileID: 6461931890504069970}
+  deathScreen: {fileID: 0}
   shieldScript: {fileID: 0}
   GunTip: {fileID: 6461931890507816096}
   scoreTxt: {fileID: 0}
+  isGrounded: 0
+  jumpSoundClip: {fileID: 8300000, guid: 273f61fac70733e4c9c6de5c05ff42aa, type: 3}
+  damageSoundClip: {fileID: 8300000, guid: db8d9f2927d4696428cd6f84d816716a, type: 3}
+  pistolSoundClip: {fileID: 8300000, guid: 35db8df313ac93f4c865699a51a58ac5, type: 3}
+  rifleSoundClip: {fileID: 8300000, guid: b0669792a6696cc48a855b19ccc6058e, type: 3}
+  shotgunSoundClip: {fileID: 8300000, guid: 7cc0cb63b918575498db703a1e0497d9, type: 3}
 --- !u!95 &6461931890444293464
 Animator:
   serializedVersion: 5
@@ -333,7 +349,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 5
+  m_SortingLayer: 8
   m_SortingOrder: 1
   m_Sprite: {fileID: -873133600, guid: e8d4a696d46da994483ef49263ac3d5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -485,7 +501,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 5
+  m_SortingLayer: 8
   m_SortingOrder: 1
   m_Sprite: {fileID: 1418744057, guid: e8d4a696d46da994483ef49263ac3d5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -645,7 +661,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 5
+  m_SortingLayer: 8
   m_SortingOrder: 1
   m_Sprite: {fileID: 2077072169, guid: e8d4a696d46da994483ef49263ac3d5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
