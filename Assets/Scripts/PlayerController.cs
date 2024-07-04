@@ -56,6 +56,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioClip pistolSoundClip;
     [SerializeField] private AudioClip rifleSoundClip;
     [SerializeField] private AudioClip shotgunSoundClip;
+    [SerializeField] private AudioClip coinSoundClip;
+    [SerializeField] private AudioClip shieldBreakSoundClip;
 
     float moveDirection = 0;
 
@@ -310,6 +312,7 @@ public class PlayerController : MonoBehaviour
     public void GetCoin(int coinValue)
     {
         coinScore += coinValue;
+        SoundFXManager.instance.PlaySoundFXCLip(coinSoundClip, transform, 0.1f);
         PlayerPrefs.SetInt("wallet", PlayerPrefs.GetInt("wallet") +coinValue);
         UpdateScoreText();
     }
@@ -338,6 +341,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                SoundFXManager.instance.PlaySoundFXCLip(shieldBreakSoundClip, transform, 0.1f);
                 shields--;
                 shieldScript.UpdateShieldDisplay(shields);
             }
