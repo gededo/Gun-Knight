@@ -692,7 +692,7 @@ RectTransform:
   - {fileID: 329665490935036560}
   - {fileID: 7387080866536137619}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1066,15 +1066,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4789623043459731387, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0.49995
       objectReference: {fileID: 0}
     - target: {fileID: 4789623043459731387, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4789623043459731387, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0.49995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789623043824591721, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789623043824591721, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789623043824591721, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789623043824591721, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789623043824591721, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SoundMixerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789623043824591721, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4789623044218669470, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
       propertyPath: m_Name
@@ -1178,31 +1202,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4789623044223587411, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0.49995
       objectReference: {fileID: 0}
     - target: {fileID: 4789623044223587411, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4789623044249267623, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0.49995
       objectReference: {fileID: 0}
     - target: {fileID: 4789623044249267623, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4789623044249267623, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0.49995
       objectReference: {fileID: 0}
     - target: {fileID: 4789623044773749383, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0.49995
       objectReference: {fileID: 0}
     - target: {fileID: 4789623044773749383, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789623045256690287, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789623045256690287, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789623045256690287, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789623045256690287, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSoundFXVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789623045256690287, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SoundMixerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789623045256690287, guid: 54ffb045d71d7984fb8d4c5e09e24d02, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
