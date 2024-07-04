@@ -9,7 +9,10 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] private GameObject painelMenuInicial;
     [SerializeField] private GameObject painelopcoes;
    public void Play() {
-     SceneManager.LoadScene(Leveldojogo);
+        PlayerPrefs.SetString("coins", "");
+        PlayerPrefs.SetString("equippedpowerups", "");
+        PlayerPrefs.SetInt("wallet", 0);
+        SceneManager.LoadScene(Leveldojogo);
    }
 
    public void Optionsmenu() {

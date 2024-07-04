@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject bulletPrefab;
     public GameObject Gun, Gun2, Gun3, activeGun;
+    public GameObject deathScreen;
     public ShieldHud shieldScript;
     public Coroutine shieldRegenCoroutine;
     public Transform GunTip;
@@ -113,6 +114,7 @@ public class PlayerController : MonoBehaviour
             isDead = true;
             activeGun.SetActive(false);
             anim.SetBool("isDead", true);
+            deathScreen.SetActive(true);
         }
 
         if (Input.GetKey(KeyCode.Alpha1) && !Gun.activeInHierarchy)

@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotgunPUp: {fileID: 0}
+  riflePUp: {fileID: 0}
 --- !u!1 &5274029
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,6 +157,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   rifleTooltip: {fileID: 0}
   shotgunTooltip: {fileID: 0}
+  tooltipScript: {fileID: 0}
   message: 'Fire Rate Boost: Increases Fire Rate'
   hasBought: 0
   isRifle: 0
@@ -348,6 +350,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   rifleTooltip: {fileID: 0}
   shotgunTooltip: {fileID: 0}
+  tooltipScript: {fileID: 0}
   message: 'Damage Boost: Increases Damage'
   hasBought: 0
   isRifle: 0
@@ -676,6 +679,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   rifleTooltip: {fileID: 0}
   shotgunTooltip: {fileID: 0}
+  tooltipScript: {fileID: 0}
   message: 'Speed Boost: Increases Movement Speed'
   hasBought: 0
   isRifle: 0
@@ -1084,6 +1088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotgunPUp: {fileID: 0}
+  riflePUp: {fileID: 0}
 --- !u!1 &254730531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,6 +1141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotgunPUp: {fileID: 0}
+  riflePUp: {fileID: 0}
 --- !u!1 &272384141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1329,6 +1335,7 @@ MonoBehaviour:
   arrows: {fileID: 1142885558}
   rifleTooltip: {fileID: 1902794859}
   shotgunTooltip: {fileID: 232135578}
+  tooltipScript: {fileID: 687020965}
   message: 'Shotgun: Bullets spread'
   hasBought: 0
   isRifle: 0
@@ -1509,6 +1516,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   rifleTooltip: {fileID: 0}
   shotgunTooltip: {fileID: 0}
+  tooltipScript: {fileID: 0}
   message: 'Shield Upgrade: Adds 3 Shields. Regens after 45 seconds.'
   hasBought: 0
   isRifle: 0
@@ -2105,6 +2113,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   rifleTooltip: {fileID: 0}
   shotgunTooltip: {fileID: 0}
+  tooltipScript: {fileID: 0}
   message: 'Jump Boost:   Increases Jump Height'
   hasBought: 0
   isRifle: 0
@@ -2386,6 +2395,7 @@ MonoBehaviour:
   arrows: {fileID: 921718033}
   rifleTooltip: {fileID: 1902794859}
   shotgunTooltip: {fileID: 232135578}
+  tooltipScript: {fileID: 687020965}
   message: 'Assault Rifle: Automatic'
   hasBought: 0
   isRifle: 0
@@ -2567,6 +2577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotgunPUp: {fileID: 0}
+  riflePUp: {fileID: 0}
 --- !u!1 &1101342837
 GameObject:
   m_ObjectHideFlags: 0
@@ -2807,6 +2818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotgunPUp: {fileID: 0}
+  riflePUp: {fileID: 0}
 --- !u!1 &1281578586
 GameObject:
   m_ObjectHideFlags: 0
@@ -2859,6 +2871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotgunPUp: {fileID: 0}
+  riflePUp: {fileID: 0}
 --- !u!1 &1545845847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,6 +2967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotgunPUp: {fileID: 0}
+  riflePUp: {fileID: 0}
 --- !u!1 &1747298262
 GameObject:
   m_ObjectHideFlags: 0
@@ -3250,6 +3264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotgunPUp: {fileID: 417229255}
+  riflePUp: {fileID: 0}
 --- !u!1 &2040479862
 GameObject:
   m_ObjectHideFlags: 0
@@ -3590,6 +3605,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   rifleTooltip: {fileID: 0}
   shotgunTooltip: {fileID: 0}
+  tooltipScript: {fileID: 0}
   message: 'Health Boost: Increases Health'
   hasBought: 0
   isRifle: 0
@@ -3712,7 +3728,7 @@ Transform:
   m_Children:
   - {fileID: 2040479867}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2421468407550376814
 SpriteRenderer:

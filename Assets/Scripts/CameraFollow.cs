@@ -24,7 +24,7 @@ public class CameraFollow : MonoBehaviour
     {
         if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && canControl)
         {
-            offsetDirection = Input.GetKey(KeyCode.A) ? -2.6f : 2.6f;
+            offsetDirection = Input.GetKey(KeyCode.A) ? -2.2f : 2.2f;
         }
         offset = new Vector3(offsetDirection, 4f, -10f);
 

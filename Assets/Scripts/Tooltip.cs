@@ -10,6 +10,7 @@ public class Tooltip : MonoBehaviour
     public GameObject arrows;
     public GameObject rifleTooltip;
     public GameObject shotgunTooltip;
+    public TooltipManager tooltipScript;
     public string message;
     public bool hasBought;
     public bool isRifle;
@@ -44,7 +45,7 @@ public class Tooltip : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (arrows != null) 
+        if (arrows != null && tooltipScript.isNear) 
         { 
             arrows.SetActive(true);
         }

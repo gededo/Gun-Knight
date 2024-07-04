@@ -89,9 +89,9 @@ public class TooltipManager : MonoBehaviour
 
     public void HideTooltip()
     {
-        if(gameObject.activeInHierarchy && isNear)
         gameObject.SetActive(false);
         textComponent.text = string.Empty;
+        textComponent2.text = string.Empty;
     }
 
     public void ApplyEffect()

@@ -26,4 +26,14 @@ public class SceneManagerScript : MonoBehaviour
             PlayerPrefs.SetInt("wallet", 0);
         }
     }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void LoadNext()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }
