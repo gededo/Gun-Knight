@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -7,8 +8,23 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] private GameObject painelopcoes;
     [SerializeField] private GameObject mainPausePanel;
+    [SerializeField] private AudioClip selectSoundClip;
+    [SerializeField] private Slider fxVolSlider;
+    [SerializeField] private Slider musicVolSlider;
 
     private bool isPaused = false;
+
+    private void Start()
+    {
+        if (PlayerPrefs.GetFloat("FX Volume") != 0)
+        {
+            fxVolSlider.value = PlayerPrefs.GetFloat("FX Volume");
+        }
+        if (PlayerPrefs.GetFloat("Music Volume") != 0)
+        {
+            musicVolSlider.value = PlayerPrefs.GetFloat("Music Volume");
+        }
+    }
 
     void Update()
     {
@@ -22,6 +38,7 @@ public class PauseMenu : MonoBehaviour
             {
                 Pause();
             }
+            SoundFXManager.instance.PlaySoundFXCLip(selectSoundClip, transform, 0.1f);
         }
     }
 
@@ -57,5 +74,10 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
+    }
+
+    public void SelectSound()
+    {
+        SoundFXManager.instance.PlaySoundFXCLip(selectSoundClip, transform, 0.1f);
     }
 }

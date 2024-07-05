@@ -276,12 +276,13 @@ MonoBehaviour:
   capsuleCollider: {fileID: 0}
   playerScript: {fileID: 0}
   damageSoundClip: {fileID: 8300000, guid: db8d9f2927d4696428cd6f84d816716a, type: 3}
+  dieSoundClip: {fileID: 8300000, guid: 5bc1a4192d4e36e499893ec8ed39724a, type: 3}
   redKnightMaxHealth: 12
   redKnightSpeed: 2.5
   redKnightDamage: 10
   redKnightDamageInterval: 2
   redKnightCapsuleHeight: 2
-  redKnightStoppingDistance: 0.5
+  redKnightStoppingDistance: 0.6
   redKnightChaseDuration: 3.5
   startFacingRight: 1
   attackSoundClip: {fileID: 8300000, guid: f36ba83fcbc537e4aa29e0383df644d1, type: 3}

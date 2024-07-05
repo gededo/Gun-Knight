@@ -59,7 +59,10 @@ public class Shotgun : Guns
                         GunDamage *= 1f * shotgunDamageMultiplier;
                         break;
                 }
-                enemyScript.TakeDamage(GunDamage);
+                if(enemyScript != null)
+                {
+                    enemyScript.TakeDamage(GunDamage);
+                }
                 hasShot = true;
                 GunDamage = tempGunDamage;
             }

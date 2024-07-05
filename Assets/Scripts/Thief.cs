@@ -63,6 +63,7 @@ public class Thief : Enemy
 
         if (currentHealth <= 0)
         {
+            PlayDeathSound();
             isDead = true;
             Bow.gameObject.SetActive(false);
             anim.SetBool("isDead", true);

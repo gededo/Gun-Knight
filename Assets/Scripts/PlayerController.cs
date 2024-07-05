@@ -57,10 +57,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioClip pistolSoundClip;
     [SerializeField] private AudioClip rifleSoundClip;
     [SerializeField] private AudioClip shotgunSoundClip;
+    [SerializeField] private AudioClip shotgunReloadSoundClip;
     [SerializeField] private AudioClip coinSoundClip;
     [SerializeField] private AudioClip shieldBreakSoundClip;
     [SerializeField] private AudioClip dieSoundClip;
     [SerializeField] private AudioClip walkSoundClip;
+    [SerializeField] private AudioClip shieldRegenSoundClip;
 
     float moveDirection = 0;
 
@@ -158,7 +160,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Shooting controls
-        if(Input.GetMouseButtonDown(0) && !isDead)
+        if(Input.GetMouseButtonDown(0) && !isDead && Time.timeScale == 1f)
         {
             if (activeGun == Gun && canPistolShoot)
             {
@@ -166,7 +168,6 @@ public class PlayerController : MonoBehaviour
                 GunAnim.SetTrigger("IsShooting");
                 Pistol pistolScript = activeGun.GetComponent<Pistol>();
                 GameObject bullet = (GameObject)Instantiate(bulletPrefab, GunTip.position, transform.rotation);
-                SoundFXManager.instance.PlaySoundFXCLip(pistolSoundClip, transform, 0.1f);
                 Bullet bulletScript = bullet.GetComponent<Bullet>();
                 bulletScript.playerBulletDamage = pistolScript.GunDamage * damageMultiplier;
                 if (facingRight)
@@ -177,14 +178,15 @@ public class PlayerController : MonoBehaviour
                 {
                     bulletScript.moveToX = -1;
                 }
-                StartCoroutine(pistolCooldown());    
+                SoundFXManager.instance.PlaySoundFXCLip(pistolSoundClip, transform, 0.1f);
+                StartCoroutine(pistolCooldown());
             }
             else if (activeGun == Gun2)
             {
                 isRifleShooting = true;
 
             }
-            else if (activeGun == Gun3 && canShotgunShoot)
+            else if (activeGun == Gun3 && canShotgunShoot && Time.timeScale == 1f)
             {
                 Shotgun shotgunScript = activeGun.GetComponent<Shotgun>();
                 shotgunScript.Shoot(facingRight, damageMultiplier);
@@ -220,7 +222,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isJumping", true);
         }
 
-        if (isRifleShooting && canRifleShoot && !isDead)
+        if (isRifleShooting && canRifleShoot && !isDead && Time.timeScale == 1f)
         {
             Animator GunAnim = activeGun.GetComponent<Animator>();
             GunAnim.SetTrigger("IsShooting");
@@ -295,7 +297,9 @@ public class PlayerController : MonoBehaviour
     IEnumerator shotgunCooldown()
     {
         canShotgunShoot = false;
-        yield return new WaitForSeconds(shotgunCooldownTime * fireRateMultiplier / 100);
+        yield return new WaitForSeconds((shotgunCooldownTime * fireRateMultiplier / 100) - 0.5f);
+        SoundFXManager.instance.PlaySoundFXCLip(shotgunReloadSoundClip, transform, 0.5f);
+        yield return new WaitForSeconds(0.5f);
         canShotgunShoot = true;
     }
 
@@ -311,6 +315,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(shieldRegenTime);
         if(shields < maxShields)
         {
+            SoundFXManager.instance.PlaySoundFXCLip(shieldRegenSoundClip, transform, 0.5f);
             shields++;
             shieldScript.UpdateShieldDisplay(shields);
         }

@@ -8,6 +8,7 @@ public class InteractableDoor : MonoBehaviour
 
     public Transform output;
     public Transform player;
+    public GameObject prompt;
 
     [SerializeField] private AudioClip teleportSoundClip;
 
@@ -29,6 +30,7 @@ public class InteractableDoor : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             inDoor = true;
+            prompt.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -36,6 +38,7 @@ public class InteractableDoor : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             inDoor = false;
+            prompt.SetActive(false);
         }
     }
 

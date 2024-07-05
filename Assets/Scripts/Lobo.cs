@@ -51,6 +51,7 @@ public class Lobo : Enemy
     {
         if (currentHealth <= 0)
         {
+            PlayDeathSound();
             isDead = true;
             anim.SetBool("isDead", true);
         }

@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour
     protected Coroutine stopDamage;
 
     [SerializeField] private AudioClip damageSoundClip;
+    [SerializeField] private AudioClip dieSoundClip;
 
     void Start()
     {
@@ -52,6 +53,7 @@ public class Enemy : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            PlayDeathSound();
             isDead = true;
             anim.SetBool("isDead", true);
         }
@@ -320,4 +322,11 @@ public class Enemy : MonoBehaviour
         anim.ResetTrigger("doAttack");
     }
 
+    public void PlayDeathSound()
+    {
+        if (!isDead)
+        {
+            SoundFXManager.instance.PlaySoundFXCLip(dieSoundClip, transform, 0.5f);
+        }
+    }
 }

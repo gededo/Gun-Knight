@@ -17,7 +17,8 @@ public class SceneManagerScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.H))
         {
-            Debug.Log(PlayerPrefs.GetString("equippedpowerups"));
+            Debug.Log(PlayerPrefs.GetFloat("Music Volume"));
+            Debug.Log(PlayerPrefs.GetFloat("FX Volume"));
         }
         if (Input.GetKeyDown(KeyCode.U))
         {
