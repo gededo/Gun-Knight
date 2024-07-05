@@ -23,6 +23,9 @@ public class Thief : Enemy
     public Transform BowTip;
     public Transform groundDetectionBack;
 
+    [SerializeField] private AudioClip arrowSoundClip;
+    [SerializeField] private AudioClip attackSoundClip;
+
     void Start()
     {
         maxHealth = thiefMaxHealth;
@@ -177,6 +180,7 @@ public class Thief : Enemy
             if (resetShootCooldown && !isPlayerInsideCapsule)
             {
                 GameObject arrow = (GameObject)Instantiate(Arrow, BowTip.position, transform.rotation);
+                SoundFXManager.instance.PlaySoundFXCLip(arrowSoundClip, transform, 1f);
                 Arrow arrowScript = arrow.GetComponent<Arrow>();
                 arrowScript.EnemyArrowDamage = damageAmountArrow;
                 if (movingRight)
@@ -214,5 +218,10 @@ public class Thief : Enemy
     public void enableBow()
     {
         Bow.gameObject.SetActive(true);
+    }
+
+    public void doMeleeAttackSound()
+    {
+        SoundFXManager.instance.PlaySoundFXCLip(attackSoundClip, transform, 1f);
     }
 }

@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
     public GameObject deathScreen;
     public ShieldHud shieldScript;
     public Coroutine shieldRegenCoroutine;
+    public Coroutine walkCoroutine;
     public Transform GunTip;
     public Text scoreTxt;
     //public Camera mainCamera;
@@ -51,13 +52,15 @@ public class PlayerController : MonoBehaviour
     bool isColliding;
     bool isRifleShooting = false;
 
+    public AudioClip damageSoundClip;
     [SerializeField] private AudioClip jumpSoundClip;
-    [SerializeField] private AudioClip damageSoundClip;
     [SerializeField] private AudioClip pistolSoundClip;
     [SerializeField] private AudioClip rifleSoundClip;
     [SerializeField] private AudioClip shotgunSoundClip;
     [SerializeField] private AudioClip coinSoundClip;
     [SerializeField] private AudioClip shieldBreakSoundClip;
+    [SerializeField] private AudioClip dieSoundClip;
+    [SerializeField] private AudioClip walkSoundClip;
 
     float moveDirection = 0;
 
@@ -119,6 +122,7 @@ public class PlayerController : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            PlayDeathSound();
             isDead = true;
             activeGun.SetActive(false);
             anim.SetBool("isDead", true);
@@ -268,6 +272,10 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         rb.velocity = new Vector2((moveDirection) * speed, rb.velocity.y);
+        if(walkCoroutine == null && moveDirection != 0 && isGrounded)
+        {
+            walkCoroutine = StartCoroutine(walkFXCoroutine());
+        }
     }
 
     IEnumerator InvulnerabilityCoroutine()
@@ -348,5 +356,23 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Player took damage: " + damage + ". Current health: " + currentHealth);
         }
         
+    }
+
+    public void PlayDeathSound()
+    {
+        if (!isDead)
+        {
+            SoundFXManager.instance.PlaySoundFXCLip(dieSoundClip, transform, 0.5f);
+        }
+    }
+
+    IEnumerator walkFXCoroutine()
+    {
+        bool a = PlayerPrefs.GetString("equippedpowerups").Contains("Speed Boost");
+        float walkSpeed = a ? 0.2f : 0.3f;
+        SoundFXManager.instance.PlaySoundFXCLip(walkSoundClip, transform, 0.03f);
+        yield return new WaitForSeconds(walkSpeed);
+        walkCoroutine = null;
+        StopCoroutine(walkFXCoroutine());
     }
 }

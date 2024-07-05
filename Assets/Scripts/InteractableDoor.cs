@@ -9,6 +9,8 @@ public class InteractableDoor : MonoBehaviour
     public Transform output;
     public Transform player;
 
+    [SerializeField] private AudioClip teleportSoundClip;
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
@@ -17,6 +19,7 @@ public class InteractableDoor : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && inDoor){
+            SoundFXManager.instance.PlaySoundFXCLip(teleportSoundClip, transform, 0.3f);
             player.transform.position = output.position;
         }
     }

@@ -13,6 +13,8 @@ public class RedKnight : Enemy
     public float redKnightChaseDuration = 3.5f;
     public bool startFacingRight = true;
 
+    [SerializeField] private AudioClip attackSoundClip;
+
 
     void Start()
     {
@@ -77,5 +79,10 @@ public class RedKnight : Enemy
         {
             anim.SetBool("isIdle", true);
         }
+    }
+
+    public void doAttackSound()
+    {
+        SoundFXManager.instance.PlaySoundFXCLip(attackSoundClip, transform, 1f);
     }
 }

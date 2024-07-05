@@ -217,7 +217,7 @@ Transform:
   - {fileID: 62431427}
   - {fileID: 2991791026138877353}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7307140593902508615
 SpriteRenderer:
@@ -443,6 +443,8 @@ MonoBehaviour:
   Arrow: {fileID: 995745942634551303, guid: 912eb0aa71a3692498527030f6a87556, type: 3}
   BowTip: {fileID: 7896986322441129501}
   groundDetectionBack: {fileID: 50245913}
+  arrowSoundClip: {fileID: 8300000, guid: 913573b52310a6747afbc46d92f947c4, type: 3}
+  attackSoundClip: {fileID: 8300000, guid: 4f42efabd06c0b143b575d5c6b0138e7, type: 3}
 --- !u!1 &7307140593975235180
 GameObject:
   m_ObjectHideFlags: 0

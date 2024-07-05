@@ -9,6 +9,7 @@ public class KillPlayer : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             PlayerController playerScript = collision.GetComponent<PlayerController>();
+            SoundFXManager.instance.PlaySoundFXCLip(playerScript.damageSoundClip, transform, 0.8f);
             playerScript.currentHealth = 0;
             playerScript.SetHealthSlider(playerScript.currentHealth);
         }

@@ -9908,6 +9908,10 @@ PrefabInstance:
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[4].Array.data[15].Y
       value: -160333328
       objectReference: {fileID: 0}
+    - target: {fileID: 2097288364, guid: de498411d5fca9e4490858d1b71553f1, type: 3}
+      propertyPath: teleportSoundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e65152685818be04998827ed34980edc, type: 3}
     - target: {fileID: 944381880247132961, guid: de498411d5fca9e4490858d1b71553f1, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -13120,6 +13124,10 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[2695].second.m_TileObjectToInstantiateIndex
       value: 65535
       objectReference: {fileID: 0}
+    - target: {fileID: 4529736954639349466, guid: de498411d5fca9e4490858d1b71553f1, type: 3}
+      propertyPath: teleportSoundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e65152685818be04998827ed34980edc, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
