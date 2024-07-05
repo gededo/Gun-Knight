@@ -53,12 +53,6 @@ TagManager:
   - name: Ground
     uniqueID: 883340281
     locked: 0
-  - name: Castelo2
-    uniqueID: 1008738319
-    locked: 0
-  - name: P2
-    uniqueID: 442946233
-    locked: 0
   - name: Chao
     uniqueID: 4131302769
     locked: 0
@@ -67,6 +61,12 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2015137563
+    locked: 0
+  - name: Castelo2
+    uniqueID: 1008738319
+    locked: 0
+  - name: P2
+    uniqueID: 442946233
     locked: 0
   - name: Interface
     uniqueID: 1458443163
