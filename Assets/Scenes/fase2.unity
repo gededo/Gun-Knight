@@ -12698,7 +12698,7 @@ GameObject:
   - component: {fileID: 1445470186}
   - component: {fileID: 1445470185}
   m_Layer: 6
-  m_Name: Music Trigger
+  m_Name: MusicTrigger
   m_TagString: Non-Collidable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12777,7 +12777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasTriggered: 0
-  levelMusic: {fileID: 8300000, guid: bd2a6f1fcd1013e438524ae801f49eba, type: 3}
+  levelMusic: {fileID: 8300000, guid: f5b120cc165f0284589d2abcd3c415be, type: 3}
 --- !u!1001 &1446682846
 PrefabInstance:
   m_ObjectHideFlags: 0
