@@ -73,7 +73,7 @@ public class TooltipManager : MonoBehaviour
                         }
                     }
                 }
-                SoundFXManager.instance.PlaySoundFXCLip(cashSoundClip, transform, 0.3f);
+                SoundFXManager.instance.PlaySoundFXCLip(cashSoundClip, transform, 0.8f);
                 powerupEffect = null;
                 selected = null;
                 player = null;
@@ -82,7 +82,7 @@ public class TooltipManager : MonoBehaviour
             }
             else
             {
-                SoundFXManager.instance.PlaySoundFXCLip(errorSoundClip, transform, 0.1f);
+                SoundFXManager.instance.PlaySoundFXCLip(errorSoundClip, transform, 0.7f);
             }
         }
     }

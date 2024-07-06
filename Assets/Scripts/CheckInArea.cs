@@ -17,6 +17,8 @@ public class CheckInArea : MonoBehaviour
     Vector2 boxPos;
     Vector2 boxSize;
 
+    [SerializeField] private AudioClip finalDoorSoundClip;
+
     void Start()
     {
         detectedObjects = new List<GameObject>();
@@ -57,6 +59,13 @@ public class CheckInArea : MonoBehaviour
             openDoor.SetActive(true);
             StartCoroutine(cameraTrigger.changeTarget(cameraTrigger.cameraScript.target, cameraTrigger.targetTransform, cameraTrigger.holdTime));
             stopCounting = true;
+            StartCoroutine(PlayDoorSound());
         }
+    }
+
+    IEnumerator PlayDoorSound()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SoundFXManager.instance.PlaySoundFXCLip(finalDoorSoundClip, transform, 0.3f);
     }
 }
