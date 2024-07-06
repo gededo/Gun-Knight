@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0096cc7113c251d468b33d9421486fc9, type: 3}
   m_Name: Fire Rate Boost
   m_EditorClassIdentifier: 
-  price: 100
+  price: 7
   amount: 0.75

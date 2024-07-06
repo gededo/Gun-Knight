@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641179131a9a1c84bafa5d1a739d7303, type: 3}
   m_Name: Rifle Powerup
   m_EditorClassIdentifier: 
-  price: 1
+  price: 4
   gunName: Rifle

@@ -7,7 +7,7 @@ public class Shotgun : Guns
 {
     public float fovAngle = 60f;
     public float fovRange = 5f;
-    public float shotgunDamageMultiplier = 1f;
+    public float shotgunDamageMultiplier = 10f;
     public bool hasShot = false;
     public Transform shotgunTip;
     public LayerMask enemyLayer;
@@ -47,7 +47,7 @@ public class Shotgun : Guns
                 switch (distanceToEnemy)
                 {
                     case < 2f:
-                        GunDamage *= 10f * shotgunDamageMultiplier;
+                        GunDamage *= 9f * shotgunDamageMultiplier;
                         break;
                     case < 3.5f:
                         GunDamage *= 6f * shotgunDamageMultiplier;

@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class Rifle : Guns
 {
-    public float rifleDamageMultiplier = 1f;
+    public float rifleDamageMultiplier = 10f;
 
     void Awake()
     {
-        GunDamage = rifleDamageMultiplier * 5f;
+        GunDamage = rifleDamageMultiplier * 3f;
     }
 }

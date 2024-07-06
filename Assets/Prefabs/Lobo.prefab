@@ -140,7 +140,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1802687089
-  m_SortingLayer: 7
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -1187138278, guid: e95a1cd3ca5d6f3469c11b9616a9ecdd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -312,9 +312,9 @@ MonoBehaviour:
   playerScript: {fileID: 0}
   damageSoundClip: {fileID: 8300000, guid: db8d9f2927d4696428cd6f84d816716a, type: 3}
   dieSoundClip: {fileID: 8300000, guid: 5bc1a4192d4e36e499893ec8ed39724a, type: 3}
-  LoboMaxHealth: 12
+  LoboMaxHealth: 13
   LoboSpeed: 7
-  LoboDamage: 10
+  LoboDamage: 30
   LoboDamageInterval: 1
   LoboCapsuleHeight: 2
   LoboStoppingDistance: 1.7

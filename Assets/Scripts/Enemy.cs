@@ -308,7 +308,7 @@ public class Enemy : MonoBehaviour
             SoundFXManager.instance.PlaySoundFXCLip(damageSoundClip, transform, 0.7f);
             isChasing = true;
             FollowPlayer();
-            //Debug.Log("Enemy took damage: " + damage + ". Current health: " + currentHealth);
+            Debug.Log("Enemy took damage: " + damage + ". Current health: " + currentHealth);
         }
     }
 

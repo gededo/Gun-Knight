@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfbb678088dda5a48b62e3f0368a27d5, type: 3}
   m_Name: Jump Boost
   m_EditorClassIdentifier: 
-  price: 1
+  price: 2
   amount: 19

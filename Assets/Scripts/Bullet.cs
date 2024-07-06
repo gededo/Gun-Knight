@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        else
+        else if (collision.gameObject.tag != "Non-Collidable")
         {
             Destroy(gameObject);
         }
