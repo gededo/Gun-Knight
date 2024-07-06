@@ -16,7 +16,7 @@ public class Tooltip : MonoBehaviour
     public bool isRifle;
     public bool a;
 
-    private void Start()
+    private void Awake()
     {
         a = PlayerPrefs.GetString("equippedpowerups").Contains(gameObject.transform.parent.gameObject.name);
         if (rifleTooltip != null && shotgunTooltip != null)

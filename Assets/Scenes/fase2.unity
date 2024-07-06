@@ -7717,6 +7717,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f46d1cc8186149e4ca3a7fcb187e3941, type: 3}
+--- !u!114 &351284074 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7630816907053103944, guid: f46d1cc8186149e4ca3a7fcb187e3941, type: 3}
+  m_PrefabInstance: {fileID: 351284073}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcc52839cebe35d40bbda3815b253ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &351505888 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7859814005879150494, guid: 00db53784a29a76449f147807abd25f5, type: 3}
@@ -9534,6 +9545,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7387080865493930083, guid: b68024144f5ec404b9b9b25f9557d779, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 351284074}
+    - target: {fileID: 7387080866945943909, guid: b68024144f5ec404b9b9b25f9557d779, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 351284074}
     - target: {fileID: 8590253813808223973, guid: b68024144f5ec404b9b9b25f9557d779, type: 3}
       propertyPath: m_Camera
       value: 
@@ -9630,18 +9649,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1165042910}
-    - target: {fileID: 8590253814397535490, guid: b68024144f5ec404b9b9b25f9557d779, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Resume
-      objectReference: {fileID: 0}
     - target: {fileID: 8590253814582514175, guid: b68024144f5ec404b9b9b25f9557d779, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1165042910}
-    - target: {fileID: 8590253814582514175, guid: b68024144f5ec404b9b9b25f9557d779, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ExitToMainMenu
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

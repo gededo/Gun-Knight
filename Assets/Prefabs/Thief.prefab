@@ -430,7 +430,7 @@ MonoBehaviour:
   playerScript: {fileID: 0}
   damageSoundClip: {fileID: 8300000, guid: db8d9f2927d4696428cd6f84d816716a, type: 3}
   dieSoundClip: {fileID: 8300000, guid: 5bc1a4192d4e36e499893ec8ed39724a, type: 3}
-  thiefMaxHealth: 8
+  thiefMaxHealth: 7
   thiefSpeed: 2
   thiefDamageInterval: 1
   thiefCapsuleHeight: 2

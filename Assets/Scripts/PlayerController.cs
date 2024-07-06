@@ -122,6 +122,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyUp(KeyCode.H)) 
+        {
+            print(PlayerPrefs.GetString("equippedpowerups"));
+        }
+
         if (currentHealth <= 0)
         {
             PlayDeathSound();

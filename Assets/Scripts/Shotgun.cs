@@ -47,7 +47,7 @@ public class Shotgun : Guns
                 switch (distanceToEnemy)
                 {
                     case < 2f:
-                        GunDamage *= 9f * shotgunDamageMultiplier;
+                        GunDamage *= 8f * shotgunDamageMultiplier;
                         break;
                     case < 3.5f:
                         GunDamage *= 6f * shotgunDamageMultiplier;
