@@ -1882,6 +1882,8 @@ MonoBehaviour:
   selected: {fileID: 0}
   textComponent: {fileID: 1101342839}
   textComponent2: {fileID: 36770260}
+  cashSoundClip: {fileID: 8300000, guid: 2465669647ef0604ab1880f0022d1d8f, type: 3}
+  errorSoundClip: {fileID: 8300000, guid: 44506b0b58889ce4882b825fed9d93e4, type: 3}
 --- !u!1 &714663661
 GameObject:
   m_ObjectHideFlags: 0

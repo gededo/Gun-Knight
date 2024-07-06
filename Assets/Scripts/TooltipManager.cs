@@ -19,6 +19,9 @@ public class TooltipManager : MonoBehaviour
 
     public static TooltipManager _instance;
 
+    [SerializeField] private AudioClip cashSoundClip;
+    [SerializeField] private AudioClip errorSoundClip;
+
     private void Awake()
     {
         /*if (_instance != null && _instance != this)
@@ -39,41 +42,48 @@ public class TooltipManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && hoveringOver && isNear
-            && playerScript.coinScore >= powerupEffect.price && !selected.hasBought)
+        if (Input.GetKeyDown(KeyCode.E) && hoveringOver && isNear && !selected.hasBought)
         {
-            ApplyEffect();
-            selected.hasBought = true;
-            PlayerPrefs.SetString("equippedpowerups", (PlayerPrefs.GetString("equippedpowerups") + selected.gameObject.transform.parent.gameObject.name));
-            selected.gameObject.transform.parent.gameObject.SetActive(false);
-            HideTooltip();
-            playerScript.coinScore -= powerupEffect.price;
-            PlayerPrefs.SetInt("wallet", PlayerPrefs.GetInt("wallet") - powerupEffect.price);
-            if (selected.rifleTooltip != null && selected.shotgunTooltip != null)
+            if (playerScript.coinScore >= powerupEffect.price)
             {
-                if (selected.isRifle && !selected.shotgunTooltip.GetComponentInChildren<Tooltip>().hasBought)
+                ApplyEffect();
+                selected.hasBought = true;
+                PlayerPrefs.SetString("equippedpowerups", (PlayerPrefs.GetString("equippedpowerups") + selected.gameObject.transform.parent.gameObject.name));
+                selected.gameObject.transform.parent.gameObject.SetActive(false);
+                HideTooltip();
+                playerScript.coinScore -= powerupEffect.price;
+                PlayerPrefs.SetInt("wallet", PlayerPrefs.GetInt("wallet") - powerupEffect.price);
+                if (selected.rifleTooltip != null && selected.shotgunTooltip != null)
                 {
-                    selected.shotgunTooltip.
-                        GetComponentInChildren<Tooltip>().a = PlayerPrefs.GetString("equippedpowerups").Contains(selected.shotgunTooltip.gameObject.name);
-                    if (!selected.shotgunTooltip.GetComponentInChildren<Tooltip>().a)
+                    if (selected.isRifle && !selected.shotgunTooltip.GetComponentInChildren<Tooltip>().hasBought)
                     {
-                        selected.shotgunTooltip.SetActive(true);
+                        selected.shotgunTooltip.
+                            GetComponentInChildren<Tooltip>().a = PlayerPrefs.GetString("equippedpowerups").Contains(selected.shotgunTooltip.gameObject.name);
+                        if (!selected.shotgunTooltip.GetComponentInChildren<Tooltip>().a)
+                        {
+                            selected.shotgunTooltip.SetActive(true);
+                        }
+                    }
+                    else if (!selected.isRifle && !selected.rifleTooltip.GetComponentInChildren<Tooltip>().hasBought)
+                    {
+                        bool rifleBought = PlayerPrefs.GetString("equippedpowerups").Contains("Rifle PUp");
+                        if (!rifleBought)
+                        {
+                            selected.rifleTooltip.SetActive(true);
+                        }
                     }
                 }
-                else if (!selected.isRifle && !selected.rifleTooltip.GetComponentInChildren<Tooltip>().hasBought)
-                {
-                    bool rifleBought = PlayerPrefs.GetString("equippedpowerups").Contains("Rifle PUp");
-                    if (!rifleBought) 
-                    {
-                        selected.rifleTooltip.SetActive(true);
-                    }
-                }
+                SoundFXManager.instance.PlaySoundFXCLip(cashSoundClip, transform, 0.3f);
+                powerupEffect = null;
+                selected = null;
+                player = null;
+                hoveringOver = false;
+                playerScript.UpdateScoreText();
             }
-            powerupEffect = null;
-            selected = null;
-            player = null;
-            hoveringOver = false;
-            playerScript.UpdateScoreText();
+            else
+            {
+                SoundFXManager.instance.PlaySoundFXCLip(errorSoundClip, transform, 0.1f);
+            }
         }
     }
 

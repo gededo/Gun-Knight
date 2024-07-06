@@ -14,6 +14,8 @@ public class Lobo : Enemy
     public bool startFacingRight = true;
     private bool isAttacking = false;
 
+    [SerializeField] private AudioClip attackSoundClip;
+
 
     void Start()
     {
@@ -90,5 +92,10 @@ public class Lobo : Enemy
     public void ResumeMovement()
     {
         isAttacking = false;
+    }
+
+    public void doAttackSound()
+    {
+        SoundFXManager.instance.PlaySoundFXCLip(attackSoundClip, transform, 1f);
     }
 }

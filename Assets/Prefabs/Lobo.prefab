@@ -320,3 +320,4 @@ MonoBehaviour:
   LoboStoppingDistance: 1.7
   LoboChaseDuration: 3.5
   startFacingRight: 1
+  attackSoundClip: {fileID: 8300000, guid: 28a334e8566708d48b3861a70e40d8a9, type: 3}
