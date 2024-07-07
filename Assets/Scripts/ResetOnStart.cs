@@ -31,6 +31,12 @@ public class ResetOnStart : MonoBehaviour
             Destroy(music);
         }
 
+        GameObject ambience = GameObject.FindGameObjectWithTag("Ambience");
+        if (ambience != null)
+        {
+            Destroy(ambience);
+        }
+
         PlayerPrefs.SetString("coins", "");
         PlayerPrefs.SetString("equippedpowerups", "");
         PlayerPrefs.SetInt("wallet", 0);
