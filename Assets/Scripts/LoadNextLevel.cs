@@ -6,6 +6,9 @@ public class LoadNextLevel : MonoBehaviour
 {
     SceneManagerScript sceneManagerScript;
 
+    public float fadeInDuration = 0.4f;
+    public CanvasGroup canvGroup;
+
     private void Start()
     {
         sceneManagerScript = GameObject.Find("SceneManager").GetComponent<SceneManagerScript>();
@@ -18,7 +21,21 @@ public class LoadNextLevel : MonoBehaviour
             PlayerPrefs.SetString("coins", "");
             PlayerPrefs.SetString("equippedpowerups", "");
             PlayerPrefs.SetInt("wallet", 0);
-            sceneManagerScript.LoadNext();
+            StartCoroutine(FadeIn(canvGroup));
         }
+    }
+
+    public IEnumerator FadeIn(CanvasGroup canvGroup)
+    {
+        float counter = 0f;
+
+        while (counter < fadeInDuration)
+        {
+            counter += Time.deltaTime;
+            canvGroup.alpha = Mathf.Lerp(0, 1, counter / fadeInDuration);
+
+            yield return null;
+        }
+        sceneManagerScript.LoadNext();
     }
 }

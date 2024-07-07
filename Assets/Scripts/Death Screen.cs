@@ -7,10 +7,10 @@ public class DeathScreen : MonoBehaviour
     SceneManagerScript sceneManagerScript;
 
     public float fadeInDuration = 0.4f;
+    public CanvasGroup canvGroup;
     
     void Start()
     {
-        var canvGroup = GetComponent<CanvasGroup>();
         StartCoroutine(FadeIn(canvGroup));
         sceneManagerScript = GameObject.Find("SceneManager").GetComponent<SceneManagerScript>();
     }
