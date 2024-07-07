@@ -361,7 +361,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a921542d83448cf41b7d57646fcc8f69, type: 2}
   m_sharedMaterial: {fileID: 2191978249142221661, guid: a921542d83448cf41b7d57646fcc8f69, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2191978249142221661, guid: a921542d83448cf41b7d57646fcc8f69, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -700,7 +701,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a921542d83448cf41b7d57646fcc8f69, type: 2}
   m_sharedMaterial: {fileID: 2191978249142221661, guid: a921542d83448cf41b7d57646fcc8f69, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2191978249142221661, guid: a921542d83448cf41b7d57646fcc8f69, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -810,7 +812,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -916,6 +918,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -1552316367
       objectReference: {fileID: 0}
+    - target: {fileID: 7771347678583817860, guid: c1beee8f6d2dce045a3eaad3cb222ca1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 7771347678583817861, guid: c1beee8f6d2dce045a3eaad3cb222ca1, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1036,7 +1042,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1858abcf85c6beb4ab3a8d87caba5ae6, type: 2}
   m_sharedMaterial: {fileID: 4860398316496141693, guid: 1858abcf85c6beb4ab3a8d87caba5ae6, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 4860398316496141693, guid: 1858abcf85c6beb4ab3a8d87caba5ae6, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -1181,6 +1188,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6461931890444293478, guid: a01ee41b80df4214094dba99c03e0a3d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     m_RemovedComponents:
     - {fileID: 6461931890444293479, guid: a01ee41b80df4214094dba99c03e0a3d, type: 3}
     - {fileID: 6461931890444293476, guid: a01ee41b80df4214094dba99c03e0a3d, type: 3}

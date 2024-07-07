@@ -108,7 +108,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,7 +127,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -157,7 +157,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   rifleTooltip: {fileID: 0}
   shotgunTooltip: {fileID: 0}
-  tooltipScript: {fileID: 0}
+  tooltipScript: {fileID: 687020965}
   message: 'Fire Rate Boost: Increases Fire Rate'
   hasBought: 0
   isRifle: 0
@@ -301,7 +301,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -320,7 +320,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -350,7 +350,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   rifleTooltip: {fileID: 0}
   shotgunTooltip: {fileID: 0}
-  tooltipScript: {fileID: 0}
+  tooltipScript: {fileID: 687020965}
   message: 'Damage Boost: Increases Damage'
   hasBought: 0
   isRifle: 0
@@ -630,7 +630,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -649,7 +649,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -679,7 +679,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   rifleTooltip: {fileID: 0}
   shotgunTooltip: {fileID: 0}
-  tooltipScript: {fileID: 0}
+  tooltipScript: {fileID: 687020965}
   message: 'Speed Boost: Increases Movement Speed'
   hasBought: 0
   isRifle: 0
@@ -825,7 +825,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -844,7 +844,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 2077072169, guid: e8d4a696d46da994483ef49263ac3d5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -914,7 +914,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -933,7 +933,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -55515764, guid: f629c5ed4a4cc564e85ec2866a341426, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1003,7 +1003,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1022,7 +1022,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -665691573, guid: f629c5ed4a4cc564e85ec2866a341426, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1199,7 +1199,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1218,7 +1218,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -693694147, guid: f629c5ed4a4cc564e85ec2866a341426, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1286,7 +1286,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1305,7 +1305,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1467,7 +1467,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1486,7 +1486,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1516,7 +1516,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   rifleTooltip: {fileID: 0}
   shotgunTooltip: {fileID: 0}
-  tooltipScript: {fileID: 0}
+  tooltipScript: {fileID: 687020965}
   message: 'Shield Upgrade: Adds 3 Shields. Regens after 45 seconds.'
   hasBought: 0
   isRifle: 0
@@ -1662,7 +1662,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1681,7 +1681,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 2054978677, guid: f629c5ed4a4cc564e85ec2866a341426, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1751,7 +1751,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1770,7 +1770,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 1657329454, guid: f629c5ed4a4cc564e85ec2866a341426, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1941,7 +1941,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1960,7 +1960,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 1418744057, guid: e8d4a696d46da994483ef49263ac3d5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2066,7 +2066,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2085,7 +2085,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2115,7 +2115,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   rifleTooltip: {fileID: 0}
   shotgunTooltip: {fileID: 0}
-  tooltipScript: {fileID: 0}
+  tooltipScript: {fileID: 687020965}
   message: 'Jump Boost:   Increases Jump Height'
   hasBought: 0
   isRifle: 0
@@ -2261,7 +2261,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2280,7 +2280,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 618385891, guid: f629c5ed4a4cc564e85ec2866a341426, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2348,7 +2348,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2367,7 +2367,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3028,7 +3028,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3047,7 +3047,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1458443163
-  m_SortingLayer: 9
+  m_SortingLayer: 10
   m_SortingOrder: 0
   m_Sprite: {fileID: 8980438598086963491, guid: ede4b03d4049f481a80ce6756418b385, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3558,7 +3558,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3577,7 +3577,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2015137563
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3607,7 +3607,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   rifleTooltip: {fileID: 0}
   shotgunTooltip: {fileID: 0}
-  tooltipScript: {fileID: 0}
+  tooltipScript: {fileID: 687020965}
   message: 'Health Boost: Increases Health'
   hasBought: 0
   isRifle: 0
@@ -3709,6 +3709,7 @@ GameObject:
   - component: {fileID: 2421468407550376809}
   - component: {fileID: 2044954645}
   - component: {fileID: 2044954646}
+  - component: {fileID: 3559690323959435252}
   m_Layer: 9
   m_Name: Shop
   m_TagString: Untagged
@@ -3752,7 +3753,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3770,8 +3771,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1802687089
-  m_SortingLayer: 5
+  m_SortingLayerID: 329254853
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 723812051, guid: d69c95f4948a81f4f8d7fa21c19001be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3882,3 +3883,80 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TooltipBox: {fileID: 687020963}
   tooltipScript: {fileID: 0}
+--- !u!114 &3559690323959435252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2421468407550376808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 0000000055e82d09318879a3f9b3a63471d2726b1b8f1c780f20203cb9d2661a9b13ee56
+  m_ShapePath:
+  - {x: -0.35725942, y: 0.07183608, z: 0}
+  - {x: -0.3342684, y: 0.07189091, z: 0}
+  - {x: -0.3342684, y: 0.08264275, z: 0}
+  - {x: -0.32347208, y: 0.08243052, z: 0}
+  - {x: -0.3243436, y: 0.23730424, z: 0}
+  - {x: -0.33437097, y: 0.2381779, z: 0}
+  - {x: -0.3359225, y: 0.25963503, z: 0}
+  - {x: -0.34502026, y: 0.2604621, z: 0}
+  - {x: -0.34584734, y: 0.27121398, z: 0}
+  - {x: -0.36983225, y: 0.27204105, z: 0}
+  - {x: -0.37078062, y: 0.2830513, z: 0}
+  - {x: -0.3582533, y: 0.28279302, z: 0}
+  - {x: -0.35742626, y: 0.29685304, z: 0}
+  - {x: -0.33349797, y: 0.29780078, z: 0}
+  - {x: -0.33349797, y: 0.31751272, z: 0}
+  - {x: -0.39312097, y: 0.3178528, z: 0}
+  - {x: -0.39263386, y: 0.33050698, z: 0}
+  - {x: -0.3706593, y: 0.32993573, z: 0}
+  - {x: -0.37148634, y: 0.34234172, z: 0}
+  - {x: -0.33509547, y: 0.34234172, z: 0}
+  - {x: -0.33509547, y: 0.35392067, z: 0}
+  - {x: -0.30124235, y: 0.35445544, z: 0}
+  - {x: -0.30035868, y: 0.36632666, z: 0}
+  - {x: -0.18291515, y: 0.36715373, z: 0}
+  - {x: -0.18106297, y: 0.37763774, z: 0}
+  - {x: 0.10091081, y: 0.37750223, z: 0}
+  - {x: 0.10083511, y: 0.36524665, z: 0}
+  - {x: 0.21800295, y: 0.36593893, z: 0}
+  - {x: 0.21826176, y: 0.35373303, z: 0}
+  - {x: 0.25306824, y: 0.35331562, z: 0}
+  - {x: 0.25388327, y: 0.34196058, z: 0}
+  - {x: 0.2888275, y: 0.3412833, z: 0}
+  - {x: 0.28908646, y: 0.32988405, z: 0}
+  - {x: 0.31231612, y: 0.3302112, z: 0}
+  - {x: 0.3129107, y: 0.317755, z: 0}
+  - {x: 0.25254813, y: 0.31805757, z: 0}
+  - {x: 0.25254387, y: 0.2941482, z: 0}
+  - {x: 0.2765844, y: 0.29455683, z: 0}
+  - {x: 0.2765072, y: 0.28276405, z: 0}
+  - {x: 0.28843912, y: 0.28263462, z: 0}
+  - {x: 0.28832147, y: 0.27182016, z: 0}
+  - {x: 0.26487914, y: 0.2707327, z: 0}
+  - {x: 0.2655565, y: 0.25852674, z: 0}
+  - {x: 0.25389838, y: 0.25881577, z: 0}
+  - {x: 0.2539026, y: 0.23518285, z: 0}
+  - {x: 0.24183527, y: 0.2349342, z: 0}
+  - {x: 0.2433431, y: 0.10716168, z: 0}
+  - {x: 0.39479488, y: 0.10711869, z: 0}
+  - {x: 0.39477074, y: 0.0929987, z: 0}
+  - {x: 0.38465402, y: 0.09287729, z: 0}
+  - {x: 0.38401666, y: -0.0028654172, z: 0}
+  - {x: -0.3374403, y: -0.00576323, z: 0}
+  - {x: -0.3374403, y: 0.058334984, z: 0}
+  - {x: -0.35742626, y: 0.058657803, z: 0}
+  m_ShapePathHash: 675816068
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -3278038

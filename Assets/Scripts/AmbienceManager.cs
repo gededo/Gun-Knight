@@ -33,7 +33,5 @@ public class AmbienceManager : MonoBehaviour
         audioSource.volume = volume;
 
         audioSource.Play();
-
-        DontDestroyOnLoad(audioSource);
     }
 }

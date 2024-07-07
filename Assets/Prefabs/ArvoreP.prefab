@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 658144830436194800}
   - component: {fileID: 658144830436194814}
   - component: {fileID: 658144830436194815}
+  - component: {fileID: 1058120804553143403}
   m_Layer: 0
   m_Name: ArvoreP
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &658144830436194814
 SpriteRenderer:
@@ -53,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,3 +106,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1058120804553143403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658144830436194801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 0000000055e82d09318879a3f9b3a63471d2726b1b8f1c780f20203cb9d2661a9b13ee56
+  m_ShapePath:
+  - {x: -0.18256088, y: -1.2307237, z: -1.6328094e-10}
+  - {x: -0.11655779, y: -0.9382746, z: -0.000000016775687}
+  - {x: -0.5836997, y: -0.93827444, z: -0.000000016775687}
+  - {x: -0.7353622, y: -0.76840633, z: -0.000000016775687}
+  - {x: -0.030898381, y: 1.2428573, z: -1.6328094e-10}
+  - {x: 0.006636618, y: 1.2367908, z: -1.6328094e-10}
+  - {x: 0.7346353, y: -0.7939196, z: -1.6328094e-10}
+  - {x: 0.60538495, y: -0.9140076, z: -0.000000016775687}
+  - {x: 0.32630926, y: -0.93827444, z: -0.000000016775687}
+  - {x: 0.10791222, y: -1.0171418, z: -0.000000016775687}
+  - {x: 0.10791222, y: -1.2355437, z: -0.000000016775687}
+  m_ShapePathHash: -1974417242
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 675582

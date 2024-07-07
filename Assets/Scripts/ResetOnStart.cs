@@ -13,7 +13,7 @@ public class ResetOnStart : MonoBehaviour
         sceneId = SceneManager.GetActiveScene().buildIndex;
 
         if (Instance != null && Instance.sceneId == sceneId) 
-        { 
+        {
             Destroy(gameObject); 
             return; 
         }
@@ -22,20 +22,15 @@ public class ResetOnStart : MonoBehaviour
             Destroy(Instance.gameObject);
             Instance = this;
         }
-        DontDestroyOnLoad(gameObject);
-        Instance = this;
 
         GameObject music = GameObject.FindGameObjectWithTag("Music");
-        if (music != null) 
+        if (music != null)
         {
             Destroy(music);
         }
 
-        GameObject ambience = GameObject.FindGameObjectWithTag("Ambience");
-        if (ambience != null)
-        {
-            Destroy(ambience);
-        }
+        DontDestroyOnLoad(gameObject);
+        Instance = this;
 
         PlayerPrefs.SetString("coins", "");
         PlayerPrefs.SetString("equippedpowerups", "");
