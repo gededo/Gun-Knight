@@ -5,11 +5,15 @@ using UnityEngine;
 public class FinalDoor : MonoBehaviour
 {
     public bool inDoor = false;
+    public float fadeInDuration = 0.6f;
 
+    public CanvasGroup canvGroup;
     public Transform player;
     public GameObject prompt;
 
     SceneManagerScript sceneManagerScript;
+
+
 
     private void Awake()
     {
@@ -21,7 +25,9 @@ public class FinalDoor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && inDoor)
         {
-            sceneManagerScript.LoadNext();
+            AudioSource currentSong = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>();
+            MusicManager.instance.FadeOut(currentSong, 0.4f);
+            StartCoroutine(FadeIn(canvGroup));
         }
     }
 
@@ -40,6 +46,20 @@ public class FinalDoor : MonoBehaviour
             inDoor = false;
             prompt.SetActive(false);
         }
+    }
+
+    public IEnumerator FadeIn(CanvasGroup canvGroup)
+    {
+        float counter = 0f;
+
+        while (counter < fadeInDuration)
+        {
+            counter += Time.deltaTime;
+            canvGroup.alpha = Mathf.Lerp(0, 1, counter / fadeInDuration);
+
+            yield return null;
+        }
+        sceneManagerScript.LoadNext();
     }
 
 }

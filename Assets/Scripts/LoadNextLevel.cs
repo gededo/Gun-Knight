@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class LoadNextLevel : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class LoadNextLevel : MonoBehaviour
             PlayerPrefs.SetString("coins", "");
             PlayerPrefs.SetString("equippedpowerups", "");
             PlayerPrefs.SetInt("wallet", 0);
+            AudioSource currentSong = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>();
+            MusicManager.instance.FadeOut(currentSong, 0.4f);
             StartCoroutine(FadeIn(canvGroup));
         }
     }

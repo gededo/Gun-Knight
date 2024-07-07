@@ -36,11 +36,29 @@ public class MusicManager : MonoBehaviour
     public static IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume)
     {
         float currentTime = 0;
-        float start = audioSource.volume;
+        //float start = audioSource.volume;
         while (currentTime < duration)
         {
             currentTime += Time.deltaTime;
             audioSource.volume = Mathf.Lerp(0, targetVolume, currentTime / duration);
+            yield return null;
+        }
+        yield break;
+    }
+
+    public void FadeOut(AudioSource audioSource, float duration)
+    {
+        StartCoroutine(OutFade(audioSource, duration));
+    }
+
+    public static IEnumerator OutFade(AudioSource audioSource, float duration)
+    {
+        float currentTime = 0;
+        float start = audioSource.volume;
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(start, 0f, currentTime / duration);
             yield return null;
         }
         yield break;

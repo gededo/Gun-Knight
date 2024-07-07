@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MenuPrincipalManager : MonoBehaviour
 {
-    public float fadeInDuration = 0.4f;
+    public float fadeInDuration = 0.6f;
     public CanvasGroup canvGroup;
 
     [SerializeField] private GameObject painelMenuInicial;
@@ -14,6 +14,7 @@ public class MenuPrincipalManager : MonoBehaviour
     [SerializeField] private AudioClip selectSoundClip;
     [SerializeField] private Slider fxVolSlider;
     [SerializeField] private Slider musicVolSlider;
+    [SerializeField] private AudioClip menuMusic;
 
     private void Start()
     {
@@ -25,9 +26,12 @@ public class MenuPrincipalManager : MonoBehaviour
         {
             musicVolSlider.value = PlayerPrefs.GetFloat("Music Volume");
         }
+        MusicManager.instance.PlayMusicCLip(menuMusic, transform, 0.08f);
     }
 
     public void Play() {
+        AudioSource currentSong = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>();
+        MusicManager.instance.FadeOut(currentSong, 0.4f);
         PlayerPrefs.SetString("coins", "");
         PlayerPrefs.SetString("equippedpowerups", "");
         PlayerPrefs.SetInt("wallet", 0);

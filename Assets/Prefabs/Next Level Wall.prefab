@@ -292,5 +292,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad89ef4ec3c58c84e9af008371ff9fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeInDuration: 0.4
+  fadeInDuration: 0.6
   canvGroup: {fileID: 1659104606}
