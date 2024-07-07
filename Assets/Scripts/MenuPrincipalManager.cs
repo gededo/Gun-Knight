@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class MenuPrincipalManager : MonoBehaviour
 {
-    [SerializeField] private string Leveldojogo;
+    public float fadeInDuration = 0.4f;
+    public CanvasGroup canvGroup;
+
     [SerializeField] private GameObject painelMenuInicial;
     [SerializeField] private GameObject painelopcoes;
     [SerializeField] private AudioClip selectSoundClip;
@@ -29,8 +31,9 @@ public class MenuPrincipalManager : MonoBehaviour
         PlayerPrefs.SetString("coins", "");
         PlayerPrefs.SetString("equippedpowerups", "");
         PlayerPrefs.SetInt("wallet", 0);
-        SceneManager.LoadScene(Leveldojogo);
-   }
+        SoundFXManager.instance.PlaySoundFXCLip(selectSoundClip, transform, 0.1f);
+        StartCoroutine(FadeIn(canvGroup));
+    }
 
    public void Optionsmenu() {
      painelMenuInicial.SetActive(false);
@@ -43,12 +46,27 @@ public class MenuPrincipalManager : MonoBehaviour
    }
 
    public void Closethegame() {
-    Debug.Log("Saiu do Jogo");
-     Application.Quit();
+        Debug.Log("Saiu do Jogo");
+        SoundFXManager.instance.PlaySoundFXCLip(selectSoundClip, transform, 0.1f);
+        Application.Quit();
    }
 
     public void SelectSound()
     {
         SoundFXManager.instance.PlaySoundFXCLip(selectSoundClip, transform, 0.1f);
+    }
+
+    public IEnumerator FadeIn(CanvasGroup canvGroup)
+    {
+        float counter = 0f;
+
+        while (counter < fadeInDuration)
+        {
+            counter += Time.deltaTime;
+            canvGroup.alpha = Mathf.Lerp(0, 1, counter / fadeInDuration);
+
+            yield return null;
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

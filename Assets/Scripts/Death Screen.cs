@@ -11,6 +11,7 @@ public class DeathScreen : MonoBehaviour
     
     void Start()
     {
+        canvGroup = GetComponent<CanvasGroup>();
         StartCoroutine(FadeIn(canvGroup));
         sceneManagerScript = GameObject.Find("SceneManager").GetComponent<SceneManagerScript>();
     }
