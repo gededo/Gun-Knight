@@ -812,7 +812,7 @@ GameObject:
   - component: {fileID: 379257291}
   - component: {fileID: 379257290}
   m_Layer: 0
-  m_Name: Purple Knight
+  m_Name: Gray Knight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
