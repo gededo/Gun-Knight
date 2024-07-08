@@ -36,7 +36,7 @@ public class MenuPrincipalManager : MonoBehaviour
         PlayerPrefs.SetString("equippedpowerups", "");
         PlayerPrefs.SetInt("wallet", 0);
         SoundFXManager.instance.PlaySoundFXCLip(selectSoundClip, transform, 0.1f);
-        StartCoroutine(FadeIn(canvGroup));
+        StartCoroutine(FadeOut(canvGroup));
     }
 
    public void Optionsmenu() {
@@ -60,7 +60,7 @@ public class MenuPrincipalManager : MonoBehaviour
         SoundFXManager.instance.PlaySoundFXCLip(selectSoundClip, transform, 0.1f);
     }
 
-    public IEnumerator FadeIn(CanvasGroup canvGroup)
+    public IEnumerator FadeOut(CanvasGroup canvGroup)
     {
         float counter = 0f;
 
