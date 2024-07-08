@@ -1,5 +1,5 @@
 using System.Collections;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -286,7 +286,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void OnDrawGizmosSelected()
+    /*void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
@@ -297,7 +297,7 @@ public class Enemy : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawRay(transform.position, fovLine1);
         Gizmos.DrawRay(transform.position, fovLine2);
-    }
+    }*/
 
     public void TakeDamage(float damage)
     {

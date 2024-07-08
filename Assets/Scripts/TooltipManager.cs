@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEditor.Timeline.Actions;
+//using UnityEditor.Timeline.Actions;
 using Unity.VisualScripting;
 
 public class TooltipManager : MonoBehaviour

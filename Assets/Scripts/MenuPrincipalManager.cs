@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class MenuPrincipalManager : MonoBehaviour
 {
     public float fadeInDuration = 0.6f;
+    public GameObject BlackSquare;
+    public GameObject GunKnightTitle;
     public CanvasGroup canvGroup;
 
     [SerializeField] private GameObject painelMenuInicial;
@@ -36,17 +38,19 @@ public class MenuPrincipalManager : MonoBehaviour
         PlayerPrefs.SetString("equippedpowerups", "");
         PlayerPrefs.SetInt("wallet", 0);
         SoundFXManager.instance.PlaySoundFXCLip(selectSoundClip, transform, 0.1f);
-        StartCoroutine(FadeOut(canvGroup));
+        StartCoroutine(FadeOut(BlackSquare, canvGroup));
     }
 
    public void Optionsmenu() {
-     painelMenuInicial.SetActive(false);
-     painelopcoes.SetActive(true);
+        painelMenuInicial.SetActive(false);
+        GunKnightTitle.SetActive(false);
+        painelopcoes.SetActive(true);
    }
 
    public void Closeoptionsmenu() {
-     painelMenuInicial.SetActive(true);
-     painelopcoes.SetActive(false);
+        painelMenuInicial.SetActive(true);
+        GunKnightTitle.SetActive(true);
+        painelopcoes.SetActive(false);
    }
 
    public void Closethegame() {
@@ -60,14 +64,18 @@ public class MenuPrincipalManager : MonoBehaviour
         SoundFXManager.instance.PlaySoundFXCLip(selectSoundClip, transform, 0.1f);
     }
 
-    public IEnumerator FadeOut(CanvasGroup canvGroup)
+    public IEnumerator FadeOut(GameObject target, CanvasGroup canvGroup)
     {
         float counter = 0f;
 
         while (counter < fadeInDuration)
         {
             counter += Time.deltaTime;
-            canvGroup.alpha = Mathf.Lerp(0, 1, counter / fadeInDuration);
+            Color tmp = target.GetComponent<SpriteRenderer>().color;
+            tmp.a = Mathf.Lerp(0, 1, counter / fadeInDuration);
+            target.GetComponent<SpriteRenderer>().color = tmp;
+
+            canvGroup.alpha = Mathf.Lerp(1, 0, counter / fadeInDuration);
 
             yield return null;
         }
