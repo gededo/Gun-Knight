@@ -453,7 +453,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -218123355, guid: d0f11faa70a7e994585d6a40e1359e39, type: 3}
+      value: {fileID: -349759549, guid: 4cb06a8f88716e64e8715b3448b3fd95, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -476,7 +476,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -218123355, guid: d0f11faa70a7e994585d6a40e1359e39, type: 3}
+    - {fileID: -349759549, guid: 4cb06a8f88716e64e8715b3448b3fd95, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -1017,7 +1017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: ff2b5bdd3aff2ab4d9c0b1539b2716f0, type: 2}
+  m_Clip: {fileID: 7400000, guid: 146d1e81e514b1a4b9f2afaa65c5e5e3, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -1516,7 +1516,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: PurpleKnightIdle
+    m_DisplayName: GrayKnightIdle
   - m_Version: 1
     m_Start: 26.35
     m_ClipIn: 0
@@ -1585,7 +1585,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 6.516666666666666
     m_PreExtrapolationTime: 0
-    m_DisplayName: PurpleKnightHurt
+    m_DisplayName: GrayKnightHurt
   - m_Version: 1
     m_Start: 33.016666666666666
     m_ClipIn: 0
@@ -1962,7 +1962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 84d91cb92bd51b94981b37660f3f9468, type: 2}
+  m_Clip: {fileID: 7400000, guid: f95ac712cdc81a14cb727ec3b97c6700, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
