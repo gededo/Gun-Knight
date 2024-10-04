@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,6 @@ public class RedKnight : Enemy
     public bool startFacingRight = true;
 
     [SerializeField] private AudioClip attackSoundClip;
-
 
     void Start()
     {
@@ -35,6 +35,8 @@ public class RedKnight : Enemy
         rb = GetComponent<Rigidbody2D>();
         playerScript = player.GetComponent<PlayerController>();
         t = transform;
+
+        impulseSource = GetComponent<CinemachineImpulseSource>();
 
         if (movingRight)
         {

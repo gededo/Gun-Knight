@@ -1,5 +1,7 @@
+using Cinemachine;
 using System.Collections;
 //using UnityEditor.Experimental.GraphView;
+using TMPro;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -19,6 +21,8 @@ public class Enemy : MonoBehaviour
     public CapsuleCollider2D capsuleCollider;
     public PlayerController playerScript;
     public Coroutine stopChaseCoroutine;
+    public GameObject damagePopUpObj;
+    public TMP_Text damagePopUpTxt;
 
     protected float maxHealth = 10f;
     protected float speed = 2f;
@@ -35,6 +39,7 @@ public class Enemy : MonoBehaviour
     protected Transform t;
     protected Animator anim;
     protected Coroutine stopDamage;
+    protected CinemachineImpulseSource impulseSource;
 
     [SerializeField] private AudioClip damageSoundClip;
     [SerializeField] private AudioClip dieSoundClip;
@@ -306,6 +311,10 @@ public class Enemy : MonoBehaviour
             currentHealth -= damage;
             anim.SetBool("gettingHurt", true);
             SoundFXManager.instance.PlaySoundFXCLip(damageSoundClip, transform, 0.7f);
+            CameraShake.instance.ShakeCamera(impulseSource, damage);
+            damagePopUpTxt.text = (Mathf.Round(damage * 10) * 0.1f).ToString();
+            GameObject newDamageTxt = Instantiate(damagePopUpObj, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
+            newDamageTxt.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-20, 20), 40));
             isChasing = true;
             FollowPlayer();
             //Debug.Log("Enemy took damage: " + damage + ". Current health: " + currentHealth);

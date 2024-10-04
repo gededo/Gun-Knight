@@ -3,7 +3,15 @@ guid: 29fdd1fe197263b478a25396d3cbd4c7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - groundDetection: {instanceID: 0}
+  - wallDetection: {instanceID: 0}
+  - player: {instanceID: 0}
+  - capsuleCollider: {instanceID: 0}
+  - playerScript: {instanceID: 0}
+  - damageTxt: {fileID: 8348504842517236772, guid: 82cd698911bf0f84ca594cf23d2a3a9e, type: 3}
+  - damageSoundClip: {instanceID: 0}
+  - dieSoundClip: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

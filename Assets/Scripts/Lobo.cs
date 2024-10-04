@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,6 +37,8 @@ public class Lobo : Enemy
         rb = GetComponent<Rigidbody2D>();
         playerScript = player.GetComponent<PlayerController>();
         t = transform;
+
+        impulseSource = GetComponent<CinemachineImpulseSource>();
 
         if (movingRight)
         {

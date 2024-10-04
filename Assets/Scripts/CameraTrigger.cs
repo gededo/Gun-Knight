@@ -16,7 +16,7 @@ public class CameraTrigger : MonoBehaviour
 
     void Start()
     {
-        mainCamera = GameObject.Find("Main Camera");
+        mainCamera = GameObject.Find("Virtual Camera");
         cameraScript = mainCamera.GetComponent<CameraFollow>();
 
         player = GameObject.Find("Player");

@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 5649972541194831329}
   - component: {fileID: 5649972541194831335}
   - component: {fileID: 5649972541194831328}
+  - component: {fileID: -8553101467245241427}
   m_Layer: 8
   m_Name: PurpleKnight
   m_TagString: Enemy
@@ -275,6 +276,8 @@ MonoBehaviour:
   player: {fileID: 0}
   capsuleCollider: {fileID: 0}
   playerScript: {fileID: 0}
+  damagePopUpObj: {fileID: 8348504842517236772, guid: 82cd698911bf0f84ca594cf23d2a3a9e, type: 3}
+  damagePopUpTxt: {fileID: 5250036964684657689, guid: 82cd698911bf0f84ca594cf23d2a3a9e, type: 3}
   damageSoundClip: {fileID: 8300000, guid: db8d9f2927d4696428cd6f84d816716a, type: 3}
   dieSoundClip: {fileID: 8300000, guid: 5bc1a4192d4e36e499893ec8ed39724a, type: 3}
   redKnightMaxHealth: 21
@@ -321,3 +324,119 @@ CapsuleCollider2D:
   m_Offset: {x: 0.029287934, y: 0.72}
   m_Size: {x: 1.5, y: 1.2}
   m_Direction: 0
+--- !u!114 &-8553101467245241427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5649972541194831263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 3
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 10.536596
+        outSlope: 10.536596
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.14158198
+      - serializedVersion: 3
+        time: 0.090262555
+        value: 0.5325008
+        inSlope: -1.3560786
+        outSlope: -1.3560786
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.1438908
+      - serializedVersion: 3
+        time: 0.33066496
+        value: 1.0532004
+        inSlope: 0.34542978
+        outSlope: 0.34542978
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.24722128
+      - serializedVersion: 3
+        time: 0.5261262
+        value: 0.6357658
+        inSlope: 0.5064483
+        outSlope: 0.5064483
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.07269948
+      - serializedVersion: 3
+        time: 0.69592524
+        value: 1.0162464
+        inSlope: 0.45591712
+        outSlope: 0.45591712
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.2855435
+        outWeight: 0.17020313
+      - serializedVersion: 3
+        time: 0.9056961
+        value: 0.97225386
+        inSlope: -0.2098431
+        outSlope: -0.2098431
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.18144423
+        outWeight: 0.4437476
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0.29422048
+        outSlope: 0.29422048
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: -0.5, y: -1, z: 0}

@@ -1,5 +1,7 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -40,12 +42,16 @@ public class PlayerController : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject Gun, Gun2, Gun3, activeGun;
     public GameObject deathScreen;
+    public GameObject damagePopUpObj;
     public ShieldHud shieldScript;
     public Coroutine shieldRegenCoroutine;
     public Coroutine walkCoroutine;
     public Transform GunTip;
     public Text scoreTxt;
-    //public Camera mainCamera;
+    
+    public TMP_Text damagePopUpTxt;
+
+    private CinemachineImpulseSource impulseSource;
 
     public bool isGrounded;
     bool facingRight = true;
@@ -112,12 +118,8 @@ public class PlayerController : MonoBehaviour
         scoreTxt.text = coinScore.ToString();
         shieldScript.UpdateShieldDisplay(shields);
 
-        /*if (mainCamera)
-        {
-            cameraPos = mainCamera.transform.position;
-        }*/
-
         currentHealth = maxHealth;
+        impulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
     void Update()
@@ -354,12 +356,17 @@ public class PlayerController : MonoBehaviour
             if(shields <= 0)
             {
                 SoundFXManager.instance.PlaySoundFXCLip(damageSoundClip, transform, 0.8f);
+                CameraShake.instance.ShakeCamera(impulseSource, damage * 0.65f);
+                damagePopUpTxt.text = (Mathf.Round(damage) * 0.1f).ToString();
+                GameObject newDamageTxt = Instantiate(damagePopUpObj, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
+                newDamageTxt.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-20, 20), 40));
                 currentHealth -= damage;
                 SetHealthSlider(currentHealth);
             }
             else
             {
                 SoundFXManager.instance.PlaySoundFXCLip(shieldBreakSoundClip, transform, 0.1f);
+                CameraShake.instance.ShakeCamera(impulseSource, (damage * 0.2f));
                 shields--;
                 shieldScript.UpdateShieldDisplay(shields);
             }

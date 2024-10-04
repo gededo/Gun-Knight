@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -45,6 +46,8 @@ public class Thief : Enemy
         rb = GetComponent<Rigidbody2D>();
         playerScript = player.GetComponent<PlayerController>();
         t = transform;
+
+        impulseSource = GetComponent<CinemachineImpulseSource>();
 
         if (movingRight)
         {
