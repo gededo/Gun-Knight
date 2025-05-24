@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2eb182e26a74dd4daf253d2cb3fd987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Leveldojogo: fase1
+  fadeInDuration: 0.6
+  BlackSquare: {fileID: 0}
+  GunKnightTitle: {fileID: 0}
+  canvGroup: {fileID: 0}
   painelMenuInicial: {fileID: 0}
   painelopcoes: {fileID: 0}
+  selectSoundClip: {fileID: 0}
+  fxVolSlider: {fileID: 0}
+  musicVolSlider: {fileID: 0}
+  menuMusic: {fileID: 8300000, guid: f5d689b60547dfd46a84001d6ae89e20, type: 3}
