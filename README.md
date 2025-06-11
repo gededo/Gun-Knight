@@ -23,6 +23,7 @@ Gabriel Alves Duarte
 
 Bruno Andrade dos Santos
 - Programação
+- Arte
 - Level Design
 
 William Silva de Jesus Santos
